@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_shop"
+        android:name="com.yongjincompany.dsmtcg.ui.ShopFragment"
+        android:label="상점"
+        tools:layout="@layout/fragment_shop" />
+
+    <fragment
+        android:id="@+id/navigation_mycard"
+        android:name="com.yongjincompany.dsmtcg.ui.MyCardFragment"
+        android:label="내 카드"
+        tools:layout="@layout/fragment_my_card" />
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.yongjincompany.dsmtcg.ui.HomeFragment"
+        android:label="홈"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_trade"
+        android:name="com.yongjincompany.dsmtcg.ui.TradeFragment"
+        android:label="트레이드"
+        tools:layout="@layout/fragment_trade" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.yongjincompany.dsmtcg.ui.MyPageFragment"
+        android:label="마이페이지"
+        tools:layout="@layout/fragment_my_page" />
+</navigation>
