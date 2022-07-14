@@ -23,7 +23,7 @@
             android:layout_marginStart="0dp"
             android:layout_marginEnd="0dp"
             android:background="?android:attr/windowBackground"
-            android:backgroundTint="@color/next_color"
+            android:backgroundTint="@color/white"
             app:itemIconTint="@color/selector_bnv_menu"
             app:itemTextColor="@color/selector_bnv_menu"
             app:labelVisibilityMode="labeled"
