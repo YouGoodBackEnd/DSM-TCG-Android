@@ -14,13 +14,14 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/ic_launcher_foreground"
+            android:src="@drawable/img"
+            android:scaleY="1.2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_marginTop="8dp"
@@ -49,7 +50,7 @@
             android:background="@drawable/card_background"
             android:fontFamily="@font/nanumsquare_aceb"
             android:gravity="center"
-            android:text="축구선수 이용진"
+            android:text="초월거인 장석연"
             android:textColor="@color/white"
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
