@@ -6,7 +6,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/all_back"
+        android:background="@color/main_color"
         tools:context=".ui.HomeFragment">
 
         <androidx.constraintlayout.widget.Guideline
@@ -63,7 +63,7 @@
             android:maxLines="1"
             android:paddingEnd="8dp"
             android:text="292109"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -253,9 +253,10 @@
             android:layout_height="60dp"
             android:layout_marginBottom="40dp"
             android:background="@drawable/trade_background"
+            android:backgroundTint="@color/next_color"
             android:fontFamily="@font/nanumsquare_aceb"
             android:text="트레이드"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
