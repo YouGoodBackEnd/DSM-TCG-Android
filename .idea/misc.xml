@@ -3,14 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/user/Desktop/project/DSM-TCG-Android/app/src/main/res/drawable/bamboo_background.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/user/Desktop/project/DSM-TCG-Android/app/src/main/res/drawable/card_background.xml" value="0.24537037037037038" />
         <entry key="..\:/Users/user/Desktop/project/DSM-TCG-Android/app/src/main/res/drawable/logo_background.xml" value="0.24537037037037038" />
-        <entry key="..\:/Users/user/Desktop/project/DSM-TCG-Android/app/src/main/res/layout/activity_main.xml" value="0.22239583333333332" />
-        <entry key="..\:/Users/user/Desktop/project/DSM-TCG-Android/app/src/main/res/layout/fragment_home.xml" value="0.1" />
-        <entry key="..\:/Users/user/Desktop/project/DSM-TCG-Android/app/src/main/res/layout/fragment_my_card.xml" value="0.21484375" />
+        <entry key="..\:/Users/user/Desktop/project/DSM-TCG-Android/app/src/main/res/drawable/menu_background.xml" value="0.13240740740740742" />
+        <entry key="..\:/Users/user/Desktop/project/DSM-TCG-Android/app/src/main/res/drawable/trade_background.xml" value="0.22592592592592592" />
+        <entry key="..\:/Users/user/Desktop/project/DSM-TCG-Android/app/src/main/res/layout/activity_login.xml" value="0.14444444444444443" />
+        <entry key="..\:/Users/user/Desktop/project/DSM-TCG-Android/app/src/main/res/layout/activity_main.xml" value="0.21666666666666667" />
+        <entry key="..\:/Users/user/Desktop/project/DSM-TCG-Android/app/src/main/res/layout/activity_register.xml" value="0.14444444444444443" />
+        <entry key="..\:/Users/user/Desktop/project/DSM-TCG-Android/app/src/main/res/layout/fragment_home.xml" value="0.19298245614035087" />
+        <entry key="..\:/Users/user/Desktop/project/DSM-TCG-Android/app/src/main/res/layout/fragment_my_card.xml" value="0.152" />
         <entry key="..\:/Users/user/Desktop/project/DSM-TCG-Android/app/src/main/res/layout/fragment_my_page.xml" value="0.22239583333333332" />
+        <entry key="..\:/Users/user/Desktop/project/DSM-TCG-Android/app/src/main/res/layout/fragment_shop.xml" value="0.152" />
         <entry key="..\:/Users/user/Desktop/project/DSM-TCG-Android/app/src/main/res/layout/fragment_trade.xml" value="0.1" />
-        <entry key="..\:/Users/user/Desktop/project/DSM-TCG-Android/app/src/main/res/layout/item_my_card.xml" value="0.264" />
+        <entry key="..\:/Users/user/Desktop/project/DSM-TCG-Android/app/src/main/res/layout/item_my_card.xml" value="0.536" />
         <entry key="..\:/Users/user/Desktop/project/DSM-TCG-Android/app/src/main/res/menu/bottom_nav_menu.xml" value="0.23697916666666666" />
         <entry key="..\:/Users/user/Desktop/project/DSM-TCG-Android/app/src/main/res/menu/menu_navigation.xml" value="0.23697916666666666" />
       </map>

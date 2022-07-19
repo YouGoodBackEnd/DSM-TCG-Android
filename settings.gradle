@@ -7,4 +7,6 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "DSMTCG"
-include ':app'
+include ':presentation'
+include ':data'
+include ':domain'
