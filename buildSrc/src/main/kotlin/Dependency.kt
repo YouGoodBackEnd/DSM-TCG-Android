@@ -89,6 +89,7 @@ object Dependency {
         const val navigationFragment =
             "androidx.navigation:navigation-fragment-ktx:${Version.navigation}"
         const val navigationUi = "androidx.navigation:navigation-ui-ktx:${Version.navigation}"
+        const val morphNavigation = "com.tbuonomo:morph-bottom-navigation:${Version.morphNavigation}"
     }
 
     object WorkManager {
