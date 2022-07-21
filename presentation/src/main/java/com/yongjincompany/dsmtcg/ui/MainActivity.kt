@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.semicolon.walkhub.ui.base.BaseActivity
+import com.yongjincompany.dsmtcg.base.BaseActivity
 import com.yongjincompany.dsmtcg.R
 import com.yongjincompany.dsmtcg.databinding.ActivityMainBinding
 
