@@ -1,4 +1,4 @@
-package com.semicolon.walkhub.ui.base
+package com.yongjincompany.dsmtcg.base
 
 
 import android.os.Bundle
