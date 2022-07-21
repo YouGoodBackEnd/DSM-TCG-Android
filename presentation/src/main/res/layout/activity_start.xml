@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="activity"
+            type="com.yongjincompany.dsmtcg.ui.StartActivity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/img"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+
+        <LinearLayout
+            android:id="@+id/ll_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="end"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/bt_join"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/logo" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:fontFamily="@font/nanumsquare_aceb"
+                    android:gravity="center"
+                    android:text="DSM-TCG"
+                    android:textColor="@color/next_color"
+                    android:textSize="28sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:fontFamily="@font/nanumsquare_aceb"
+                    android:gravity="center"
+                    android:text="수집해봐."
+                    android:textColor="@color/white"
+                    android:textSize="32sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:fontFamily="@font/nanumsquare_aceb"
+                    android:gravity="center"
+                    android:text="너만의 영웅들을,"
+                    android:textColor="@color/white"
+                    android:textSize="32sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginBottom="32dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nanumsquare_aceb"
+                android:text="이미 계정이 있나요?  "
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nanumsquare_aceb"
+                android:text="  로그인 하기"
+                android:textColor="#57B4F1"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_join"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/trade_background"
+            android:backgroundTint="@color/next_color"
+            android:text="가입하기"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@id/linear"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
