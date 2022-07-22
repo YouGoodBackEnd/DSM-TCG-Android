@@ -3,6 +3,7 @@ plugins {
     id("dagger.hilt.android.plugin")
     kotlin("android")
     kotlin("kapt")
+    id("kotlin-android")
 }
 
 android {
@@ -46,6 +47,9 @@ dependencies {
     implementation(project(":data"))
 
     implementation(Dependency.Moshi.moshi)
+    implementation("androidx.appcompat:appcompat:1.4.2")
+    implementation("com.google.android.material:material:1.6.1")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     kapt(Dependency.Moshi.moshiCompiler)
     implementation(Dependency.Moshi.moshiKotlin)
 
@@ -112,6 +116,4 @@ dependencies {
     }
 
     implementation(Dependency.TedImagePicker.tedImagePicker)
-
-    implementation(Dependency.Navigation.morphNavigation)
 }
