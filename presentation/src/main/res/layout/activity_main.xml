@@ -16,14 +16,13 @@
         android:layout_height="match_parent"
         tools:context=".ui.MainActivity">
 
-        <com.tbuonomo.morphbottomnavigation.MorphBottomNavigationView
+        <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNav"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="0dp"
             android:layout_marginEnd="0dp"
             android:background="?android:attr/windowBackground"
-            android:backgroundTint="@color/white"
             app:itemIconTint="@color/selector_bnv_menu"
             app:itemTextColor="@color/selector_bnv_menu"
             app:labelVisibilityMode="labeled"
