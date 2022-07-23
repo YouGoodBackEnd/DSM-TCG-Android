@@ -1,4 +1,4 @@
-package com.yongjincompany.domain.param
+package com.yongjincompany.domain.param.user
 
 data class PostUserRegisterParam(
     val accountId: String,
