@@ -1,4 +1,4 @@
-package com.yongjincompany.dsmtcg.ui
+package com.yongjincompany.dsmtcg.ui.mycard
 
 import android.os.Bundle
 import android.view.LayoutInflater

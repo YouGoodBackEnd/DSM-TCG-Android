@@ -1,4 +1,4 @@
-package com.yongjincompany.dsmtcg.ui
+package com.yongjincompany.dsmtcg.ui.shop
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,16 +8,16 @@ import android.view.ViewGroup
 import com.yongjincompany.dsmtcg.R
 
 
-class HomeFragment : Fragment() {
+class ShopFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        return inflater.inflate(R.layout.fragment_shop, container, false)
     }
-
 }

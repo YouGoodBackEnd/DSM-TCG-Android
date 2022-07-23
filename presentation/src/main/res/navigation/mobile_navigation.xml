@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_shop"
-        android:name="com.yongjincompany.dsmtcg.ui.ShopFragment"
+        android:name="com.yongjincompany.dsmtcg.ui.shop.ShopFragment"
         android:label="상점"
         tools:layout="@layout/fragment_shop" />
 
     <fragment
         android:id="@+id/navigation_mycard"
-        android:name="com.yongjincompany.dsmtcg.ui.MyCardFragment"
+        android:name="com.yongjincompany.dsmtcg.ui.mycard.MyCardFragment"
         android:label="내 카드"
         tools:layout="@layout/fragment_my_card" />
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.yongjincompany.dsmtcg.ui.HomeFragment"
+        android:name="com.yongjincompany.dsmtcg.ui.home.HomeFragment"
         android:label="홈"
         tools:layout="@layout/fragment_home" />
 </navigation>

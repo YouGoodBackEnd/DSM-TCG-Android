@@ -7,6 +7,8 @@ import androidx.databinding.DataBindingUtil
 import com.gun0912.tedpermission.provider.TedPermissionProvider.context
 import com.yongjincompany.dsmtcg.R
 import com.yongjincompany.dsmtcg.databinding.ActivityStartBinding
+import com.yongjincompany.dsmtcg.ui.login.LoginActivity
+import com.yongjincompany.dsmtcg.ui.register.RegisterActivity
 
 class StartActivity : AppCompatActivity() {
     private lateinit var binding: ActivityStartBinding
