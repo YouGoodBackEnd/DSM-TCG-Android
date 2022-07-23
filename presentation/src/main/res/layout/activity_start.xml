@@ -53,7 +53,7 @@
                     android:fontFamily="@font/nanumsquare_aceb"
                     android:gravity="center"
                     android:text="DSM-TCG"
-                    android:textColor="@color/next_color"
+                    android:textColor="@color/teal_200"
                     android:textSize="28sp" />
 
             </LinearLayout>
@@ -102,7 +102,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nanumsquare_aceb"
-                android:text="이미 계정이 있나요?  "
+                android:text="이미 계정이 있나요? "
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 
@@ -111,7 +111,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nanumsquare_aceb"
-                android:text="  로그인 하기"
+                android:text=" 로그인 하기"
                 android:textColor="#57B4F1"
                 android:textSize="14sp" />
         </LinearLayout>
@@ -125,6 +125,7 @@
             android:background="@drawable/trade_background"
             android:backgroundTint="@color/next_color"
             android:text="가입하기"
+            android:fontFamily="@font/nanumsquare_aceb"
             android:textColor="@color/white"
             android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@id/linear"
