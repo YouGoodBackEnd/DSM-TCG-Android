@@ -6,7 +6,7 @@
     <data>
         <variable
             name="activity"
-            type="com.yongjincompany.dsmtcg.ui.RegisterActivity" />
+            type="com.yongjincompany.dsmtcg.ui.register.RegisterActivity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
