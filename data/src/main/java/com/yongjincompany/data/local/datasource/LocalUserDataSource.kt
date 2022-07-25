@@ -14,8 +14,6 @@ interface LocalUserDataSource {
     suspend fun setExpiredAt(localDateTime: String)
     suspend fun fetchExpiredAt(): LocalDateTime
 
-
-
     suspend fun setId(id: String)
     suspend fun fetchId(): String
     suspend fun clearId()
