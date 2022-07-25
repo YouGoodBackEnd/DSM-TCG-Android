@@ -1,8 +1,10 @@
 package com.yongjincompany.data.remote.response.users
 
+import com.google.gson.annotations.SerializedName
+
 data class FetchMyInfoResponse(
-    val name: String,
-    val profile_url: String,
-    val rank: Int,
-    val user_id: String
+    @SerializedName("name") val name: String,
+    @SerializedName("profile_url") val profileUrl: String,
+    @SerializedName("rank") val rank: Int,
+    @SerializedName("user_id") val userId: String
 )
