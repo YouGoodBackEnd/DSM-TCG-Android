@@ -1,10 +1,9 @@
 package com.yongjincompany.domain.usecase.user
 
 
-import com.yongjincompany.domain.param.PostUserSignInParam
+import com.yongjincompany.domain.param.user.PostUserSignInParam
 import com.yongjincompany.domain.repository.UserRepository
 import com.yongjincompany.domain.usecase.UseCase
-import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class PostUserSignInUseCase @Inject constructor(
