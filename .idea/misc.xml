@@ -25,10 +25,10 @@
         <entry key="..\:/Users/user/Desktop/project/DSM-TCG-Android/presentation/src/main/res/drawable/menu_background.xml" value="0.253125" />
         <entry key="..\:/Users/user/Desktop/project/DSM-TCG-Android/presentation/src/main/res/drawable/register_btn.xml" value="0.253125" />
         <entry key="..\:/Users/user/Desktop/project/DSM-TCG-Android/presentation/src/main/res/drawable/trade_background.xml" value="0.253125" />
-        <entry key="..\:/Users/user/Desktop/project/DSM-TCG-Android/presentation/src/main/res/layout/activity_login.xml" value="0.2" />
+        <entry key="..\:/Users/user/Desktop/project/DSM-TCG-Android/presentation/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/user/Desktop/project/DSM-TCG-Android/presentation/src/main/res/layout/activity_main.xml" value="0.203125" />
-        <entry key="..\:/Users/user/Desktop/project/DSM-TCG-Android/presentation/src/main/res/layout/activity_register.xml" value="0.23697916666666666" />
-        <entry key="..\:/Users/user/Desktop/project/DSM-TCG-Android/presentation/src/main/res/layout/activity_start.xml" value="0.264" />
+        <entry key="..\:/Users/user/Desktop/project/DSM-TCG-Android/presentation/src/main/res/layout/activity_register.xml" value="0.264" />
+        <entry key="..\:/Users/user/Desktop/project/DSM-TCG-Android/presentation/src/main/res/layout/activity_start.xml" value="0.1" />
         <entry key="..\:/Users/user/Desktop/project/DSM-TCG-Android/presentation/src/main/res/layout/fragment_home.xml" value="0.203125" />
         <entry key="..\:/Users/user/Desktop/project/DSM-TCG-Android/presentation/src/main/res/layout/fragment_my_card.xml" value="0.23697916666666666" />
         <entry key="..\:/Users/user/Desktop/project/DSM-TCG-Android/presentation/src/main/res/layout/fragment_my_page.xml" value="0.23697916666666666" />
