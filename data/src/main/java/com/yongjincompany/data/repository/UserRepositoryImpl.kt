@@ -1,21 +1,23 @@
 package com.yongjincompany.data.repository
 
-import com.google.firebase.messaging.FirebaseMessaging
 import com.yongjincompany.data.local.datasource.LocalUserDataSource
+import com.yongjincompany.data.remote.datasource.RemoteImagesDataSource
 import com.yongjincompany.data.remote.datasource.RemoteUserDataSource
+import com.yongjincompany.data.remote.request.users.UpdateMyInfoRequest
 import com.yongjincompany.data.remote.request.users.UserRegisterRequest
 import com.yongjincompany.data.remote.request.users.UserSignInRequest
 import com.yongjincompany.data.remote.response.users.UserSignInResponse
-import com.yongjincompany.domain.param.PostUserRegisterParam
-import com.yongjincompany.domain.param.PostUserSignInParam
+import com.yongjincompany.data.util.toMultipart
+import com.yongjincompany.domain.param.user.PostUserRegisterParam
+import com.yongjincompany.domain.param.user.PostUserSignInParam
+import com.yongjincompany.domain.param.user.UpdateMyInfoParam
 import com.yongjincompany.domain.repository.UserRepository
 import javax.inject.Inject
-import kotlin.coroutines.resume
-import kotlin.coroutines.suspendCoroutine
 
 class UserRepositoryImpl @Inject constructor(
     private val localUserDataSource: LocalUserDataSource,
     private val remoteUserDateSource: RemoteUserDataSource,
+    private val remoteImagesDataSource: RemoteImagesDataSource
 ) : UserRepository {
     override suspend fun postUserRegister(
         postUserRegisterParam: PostUserRegisterParam,
@@ -48,6 +50,16 @@ class UserRepositoryImpl @Inject constructor(
                 localUserDataSource.fetchPw()
             )
         )
+    }
+
+    override suspend fun updateMyInfo(updateMyInfoParam: UpdateMyInfoParam) {
+        val imageUrl = if (updateMyInfoParam.profileUrl != null) {
+            remoteImagesDataSource.postImages(
+                listOf(updateMyInfoParam.profileUrl!!.toMultipart())
+            ).imageUrl.first()
+        } else ""
+
+        remoteUserDateSource.updateMyInfo(updateMyInfoParam.toRequest(imageUrl))
     }
 
     private suspend fun saveToken(userSignInResponse: UserSignInResponse) {
@@ -89,4 +101,11 @@ class UserRepositoryImpl @Inject constructor(
             accountId = accountId,
             password = password
         )
+
+    fun UpdateMyInfoParam.toRequest(profileUrl: String) =
+        UpdateMyInfoRequest(
+            name = name,
+            profileUrl = profileUrl
+        )
+
 }
