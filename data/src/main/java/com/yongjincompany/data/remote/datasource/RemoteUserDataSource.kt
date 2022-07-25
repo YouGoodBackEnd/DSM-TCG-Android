@@ -5,18 +5,22 @@ import com.yongjincompany.data.remote.request.users.UserRegisterRequest
 import com.yongjincompany.data.remote.request.users.UserSignInRequest
 import com.yongjincompany.data.remote.response.users.UserRegisterResponse
 import com.yongjincompany.data.remote.response.users.UserSignInResponse
+import com.yongjincompany.domain.entity.users.FetchMyInfoEntity
 
 interface RemoteUserDataSource {
 
     suspend fun postUserRegister(
-        userRegisterRequest: UserRegisterRequest
+        userRegisterRequest: UserRegisterRequest,
     ): UserRegisterResponse
 
     suspend fun postUserSignIn(
-        userSignInRequest: UserSignInRequest
+        userSignInRequest: UserSignInRequest,
     ): UserSignInResponse
 
     suspend fun updateMyInfo(
-        updateMyInfoRequest: UpdateMyInfoRequest
+        updateMyInfoRequest: UpdateMyInfoRequest,
     )
+
+    suspend fun fetchMyInfo(
+    ): FetchMyInfoEntity
 }
