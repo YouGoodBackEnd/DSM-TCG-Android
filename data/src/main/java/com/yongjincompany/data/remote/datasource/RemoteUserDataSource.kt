@@ -1,8 +1,8 @@
 package com.yongjincompany.data.remote.datasource
 
+import com.yongjincompany.data.remote.request.users.UpdateMyInfoRequest
 import com.yongjincompany.data.remote.request.users.UserRegisterRequest
 import com.yongjincompany.data.remote.request.users.UserSignInRequest
-import com.yongjincompany.data.remote.request.users.updateMyInfoRequest
 import com.yongjincompany.data.remote.response.users.UserRegisterResponse
 import com.yongjincompany.data.remote.response.users.UserSignInResponse
 
@@ -17,6 +17,6 @@ interface RemoteUserDataSource {
     ): UserSignInResponse
 
     suspend fun updateMyInfo(
-        updateMyInfoRequest: updateMyInfoRequest
+        updateMyInfoRequest: UpdateMyInfoRequest
     )
 }

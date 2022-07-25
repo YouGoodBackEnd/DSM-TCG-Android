@@ -3,7 +3,7 @@ package com.yongjincompany.data.remote.datasource
 import com.yongjincompany.data.remote.api.UserApi
 import com.yongjincompany.data.remote.request.users.UserRegisterRequest
 import com.yongjincompany.data.remote.request.users.UserSignInRequest
-import com.yongjincompany.data.remote.request.users.updateMyInfoRequest
+import com.yongjincompany.data.remote.request.users.UpdateMyInfoRequest
 import com.yongjincompany.data.remote.response.users.UserRegisterResponse
 import com.yongjincompany.data.remote.response.users.UserSignInResponse
 import com.yongjincompany.data.util.HttpHandler
@@ -23,7 +23,7 @@ class RemoteUserDataSourceImpl @Inject constructor(
         .httpRequest { userApi.userSignIn(userSignInRequest) }
         .sendRequest()
 
-    override suspend fun updateMyInfo(updateMyInfoRequest: updateMyInfoRequest) =
+    override suspend fun updateMyInfo(updateMyInfoRequest: UpdateMyInfoRequest) =
         HttpHandler<Unit>()
             .httpRequest { userApi.updateMyInfo(updateMyInfoRequest) }
             .sendRequest()
