@@ -67,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="7dp"
                 android:fontFamily="@font/nanumsquare_aceb"
-                android:text="나만의 작은 영웅들 보러가기"
+                android:text="작은 영웅들 보러가기"
                 android:textColor="#212121"
                 android:textSize="24sp" />
 
