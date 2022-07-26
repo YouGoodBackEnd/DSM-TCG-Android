@@ -7,11 +7,14 @@ import com.yongjincompany.data.remote.request.users.UpdateMyInfoRequest
 import com.yongjincompany.data.remote.request.users.UserRegisterRequest
 import com.yongjincompany.data.remote.request.users.UserSignInRequest
 import com.yongjincompany.data.remote.response.users.UserSignInResponse
+import com.yongjincompany.data.util.OfflineCacheUtil
 import com.yongjincompany.data.util.toMultipart
+import com.yongjincompany.domain.entity.users.FetchMyInfoEntity
 import com.yongjincompany.domain.param.user.PostUserRegisterParam
 import com.yongjincompany.domain.param.user.PostUserSignInParam
 import com.yongjincompany.domain.param.user.UpdateMyInfoParam
 import com.yongjincompany.domain.repository.UserRepository
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class UserRepositoryImpl @Inject constructor(
@@ -61,6 +64,13 @@ class UserRepositoryImpl @Inject constructor(
 
         remoteUserDateSource.updateMyInfo(updateMyInfoParam.toRequest(imageUrl))
     }
+
+    override suspend fun fetchMyInfo(): Flow<FetchMyInfoEntity> =
+        OfflineCacheUtil<FetchMyInfoEntity>()
+            .remoteData { remoteUserDateSource.fetchMyInfo()}
+            .localData { localUserDataSource.fetchMyInfo() }
+            .doOnNeedRefresh { localUserDataSource.insertMyInfo(it) }
+            .createFlow()
 
     private suspend fun saveToken(userSignInResponse: UserSignInResponse) {
         localUserDataSource.apply {
