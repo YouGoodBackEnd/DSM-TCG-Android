@@ -1,11 +1,15 @@
 package com.yongjincompany.data.local.datasource
 
+import com.yongjincompany.data.local.dao.UserDao
+import com.yongjincompany.data.local.entity.user.toDbEntity
+import com.yongjincompany.data.local.entity.user.toEntity
 import com.yongjincompany.data.local.storage.AuthDataStorage
+import com.yongjincompany.domain.entity.users.FetchMyInfoEntity
 import org.threeten.bp.LocalDateTime
 import javax.inject.Inject
 
 class LocalUserDataSourceImpl @Inject constructor(
-    //private val userDao: UserDao,
+    private val userDao: UserDao,
     private val authDataStorage: AuthDataStorage
 ) : LocalUserDataSource {
     override suspend fun setAccessToken(token: String) {
@@ -57,5 +61,12 @@ class LocalUserDataSourceImpl @Inject constructor(
 
     override suspend fun clearPw() {
         authDataStorage.clearPw()
+    }
+
+    override suspend fun fetchMyInfo(): FetchMyInfoEntity =
+        userDao.fetchMyInfo().toEntity()
+
+    override suspend fun insertMyInfo(fetchMyInfoEntity: FetchMyInfoEntity) {
+        userDao.insertMyInfo(fetchMyInfoEntity.toDbEntity())
     }
 }
