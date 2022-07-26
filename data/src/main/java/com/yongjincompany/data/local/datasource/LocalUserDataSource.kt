@@ -1,5 +1,6 @@
 package com.yongjincompany.data.local.datasource
 
+import com.yongjincompany.domain.entity.users.FetchMyInfoEntity
 import org.threeten.bp.LocalDateTime
 
 interface LocalUserDataSource {
@@ -21,4 +22,7 @@ interface LocalUserDataSource {
     suspend fun setPw(pw: String)
     suspend fun fetchPw(): String
     suspend fun clearPw()
+
+    suspend fun fetchMyInfo(): FetchMyInfoEntity
+    suspend fun insertMyInfo(fetchMyInfoEntity: FetchMyInfoEntity)
 }
