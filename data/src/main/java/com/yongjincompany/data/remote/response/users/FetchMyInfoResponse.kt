@@ -6,5 +6,6 @@ data class FetchMyInfoResponse(
     @SerializedName("name") val name: String,
     @SerializedName("profile_url") val profileUrl: String,
     @SerializedName("rank") val rank: Int,
-    @SerializedName("user_id") val userId: String
+    @SerializedName("user_id") val userId: Long,
+    @SerializedName("account_id") val accountId: String
 )
