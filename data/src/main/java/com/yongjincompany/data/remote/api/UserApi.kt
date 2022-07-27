@@ -1,5 +1,6 @@
 package com.yongjincompany.data.remote.api
 
+import com.yongjincompany.data.remote.request.users.ChangePasswordRequest
 import com.yongjincompany.data.remote.request.users.UpdateMyInfoRequest
 import com.yongjincompany.data.remote.request.users.UserRegisterRequest
 import com.yongjincompany.data.remote.request.users.UserSignInRequest
@@ -14,21 +15,25 @@ import retrofit2.http.POST
 interface UserApi {
     @POST("users")
     suspend fun userRegister(
-        @Body userSignUpRequest: UserRegisterRequest,
+        @Body userSignUpRequest: UserRegisterRequest
     ): UserRegisterResponse
 
     @POST("users/auth")
     suspend fun userSignIn(
-        @Body userSignInRequest: UserSignInRequest,
+        @Body userSignInRequest: UserSignInRequest
     ): UserSignInResponse
 
-    @PATCH
+    @PATCH("users")
     suspend fun updateMyInfo(
-        @Body updateMyInfoRequest: UpdateMyInfoRequest,
+        @Body updateMyInfoRequest: UpdateMyInfoRequest
     )
 
-    @GET
+    @GET("users")
     suspend fun fetchMyInfo(
     ): FetchMyInfoResponse
 
+    @PATCH("users/password")
+    suspend fun changePassword(
+        @Body changePasswordRequest: ChangePasswordRequest
+    )
 }
