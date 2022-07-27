@@ -4,9 +4,12 @@ import com.yongjincompany.data.remote.api.UserApi
 import com.yongjincompany.data.remote.request.users.UserRegisterRequest
 import com.yongjincompany.data.remote.request.users.UserSignInRequest
 import com.yongjincompany.data.remote.request.users.UpdateMyInfoRequest
+import com.yongjincompany.data.remote.response.users.FetchMyInfoResponse
 import com.yongjincompany.data.remote.response.users.UserRegisterResponse
 import com.yongjincompany.data.remote.response.users.UserSignInResponse
+import com.yongjincompany.data.remote.response.users.toEntity
 import com.yongjincompany.data.util.HttpHandler
+import com.yongjincompany.domain.entity.users.FetchMyInfoEntity
 import javax.inject.Inject
 
 class RemoteUserDataSourceImpl @Inject constructor(
@@ -27,4 +30,9 @@ class RemoteUserDataSourceImpl @Inject constructor(
         HttpHandler<Unit>()
             .httpRequest { userApi.updateMyInfo(updateMyInfoRequest) }
             .sendRequest()
+
+    override suspend fun fetchMyInfo(): FetchMyInfoEntity =
+        HttpHandler<FetchMyInfoResponse>()
+            .httpRequest { userApi.fetchMyInfo() }
+            .sendRequest().toEntity()
 }
