@@ -23,7 +23,7 @@ class UserRepositoryImpl @Inject constructor(
     private val remoteImagesDataSource: RemoteImagesDataSource
 ) : UserRepository {
     override suspend fun postUserRegister(
-        postUserRegisterParam: PostUserRegisterParam,
+        postUserRegisterParam: PostUserRegisterParam
     ) {
         val postUserSignInParam = PostUserSignInParam(
             accountId = postUserRegisterParam.accountId,
@@ -67,7 +67,7 @@ class UserRepositoryImpl @Inject constructor(
 
     override suspend fun fetchMyInfo(): Flow<FetchMyInfoEntity> =
         OfflineCacheUtil<FetchMyInfoEntity>()
-            .remoteData { remoteUserDateSource.fetchMyInfo()}
+            .remoteData { remoteUserDateSource.fetchMyInfo() }
             .localData { localUserDataSource.fetchMyInfo() }
             .doOnNeedRefresh { localUserDataSource.insertMyInfo(it) }
             .createFlow()
@@ -83,7 +83,7 @@ class UserRepositoryImpl @Inject constructor(
     private suspend fun saveTokenSignUp(
         accessToken: String,
         refreshToken: String,
-        expiredAt: String,
+        expiredAt: String
     ) {
         localUserDataSource.apply {
             setAccessToken(accessToken)
