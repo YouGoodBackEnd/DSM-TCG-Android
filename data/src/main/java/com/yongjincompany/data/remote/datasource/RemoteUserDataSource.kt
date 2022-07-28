@@ -1,5 +1,6 @@
 package com.yongjincompany.data.remote.datasource
 
+import com.yongjincompany.data.remote.request.users.ChangePasswordRequest
 import com.yongjincompany.data.remote.request.users.UpdateMyInfoRequest
 import com.yongjincompany.data.remote.request.users.UserRegisterRequest
 import com.yongjincompany.data.remote.request.users.UserSignInRequest
@@ -23,4 +24,8 @@ interface RemoteUserDataSource {
 
     suspend fun fetchMyInfo(
     ): FetchMyInfoEntity
+
+    suspend fun changePassword(
+        changePasswordRequest: ChangePasswordRequest
+    )
 }
