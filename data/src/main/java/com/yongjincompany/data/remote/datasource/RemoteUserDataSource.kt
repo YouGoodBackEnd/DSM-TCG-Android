@@ -28,4 +28,6 @@ interface RemoteUserDataSource {
     suspend fun changePassword(
         changePasswordRequest: ChangePasswordRequest
     )
+
+    suspend fun logOut()
 }
