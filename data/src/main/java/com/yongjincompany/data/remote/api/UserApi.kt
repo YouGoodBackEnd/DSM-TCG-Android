@@ -7,10 +7,7 @@ import com.yongjincompany.data.remote.request.users.UserSignInRequest
 import com.yongjincompany.data.remote.response.users.FetchMyInfoResponse
 import com.yongjincompany.data.remote.response.users.UserRegisterResponse
 import com.yongjincompany.data.remote.response.users.UserSignInResponse
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.PATCH
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface UserApi {
     @POST("users")
@@ -36,4 +33,7 @@ interface UserApi {
     suspend fun changePassword(
         @Body changePasswordRequest: ChangePasswordRequest
     )
+
+    @DELETE("users")
+    suspend fun logOut()
 }
