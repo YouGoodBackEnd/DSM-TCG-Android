@@ -1,6 +1,7 @@
 package com.yongjincompany.data.remote.datasource
 
 import com.yongjincompany.data.remote.api.UserApi
+import com.yongjincompany.data.remote.request.users.ChangePasswordRequest
 import com.yongjincompany.data.remote.request.users.UserRegisterRequest
 import com.yongjincompany.data.remote.request.users.UserSignInRequest
 import com.yongjincompany.data.remote.request.users.UpdateMyInfoRequest
@@ -35,4 +36,9 @@ class RemoteUserDataSourceImpl @Inject constructor(
         HttpHandler<FetchMyInfoResponse>()
             .httpRequest { userApi.fetchMyInfo() }
             .sendRequest().toEntity()
+
+    override suspend fun changePassword(changePasswordRequest: ChangePasswordRequest) =
+        HttpHandler<Unit>()
+            .httpRequest { userApi.changePassword(changePasswordRequest) }
+            .sendRequest()
 }
