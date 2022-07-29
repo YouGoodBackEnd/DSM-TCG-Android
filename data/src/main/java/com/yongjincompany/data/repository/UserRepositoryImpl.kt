@@ -107,6 +107,10 @@ class UserRepositoryImpl @Inject constructor(
         remoteUserDateSource.changePassword(changePasswordParam.toRequest())
     }
 
+    override suspend fun logOut() {
+        remoteUserDateSource.logOut()
+    }
+
     fun PostUserRegisterParam.toRequest() =
         UserRegisterRequest(
             accountId = accountId,
