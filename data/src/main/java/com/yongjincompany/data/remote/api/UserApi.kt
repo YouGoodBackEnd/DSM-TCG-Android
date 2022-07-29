@@ -36,4 +36,7 @@ interface UserApi {
 
     @DELETE("users")
     suspend fun logOut()
+
+    @DELETE("users")
+    suspend fun deleteAccount()
 }
