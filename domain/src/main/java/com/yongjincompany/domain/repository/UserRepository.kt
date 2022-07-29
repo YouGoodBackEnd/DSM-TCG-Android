@@ -1,6 +1,7 @@
 package com.yongjincompany.domain.repository
 
 import com.yongjincompany.domain.entity.users.FetchMyInfoEntity
+import com.yongjincompany.domain.param.user.ChangePasswordParam
 import com.yongjincompany.domain.param.user.PostUserRegisterParam
 import com.yongjincompany.domain.param.user.PostUserSignInParam
 import com.yongjincompany.domain.param.user.UpdateMyInfoParam
@@ -22,4 +23,8 @@ interface UserRepository {
     )
 
     suspend fun fetchMyInfo(): Flow<FetchMyInfoEntity>
+
+    suspend fun changePassword(
+        changePasswordParam: ChangePasswordParam
+    )
 }
