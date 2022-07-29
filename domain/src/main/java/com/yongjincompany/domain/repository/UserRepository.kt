@@ -27,4 +27,6 @@ interface UserRepository {
     suspend fun changePassword(
         changePasswordParam: ChangePasswordParam
     )
+
+    suspend fun logOut()
 }
