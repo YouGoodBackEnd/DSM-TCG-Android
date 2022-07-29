@@ -3,6 +3,7 @@ package com.yongjincompany.data.repository
 import com.yongjincompany.data.local.datasource.LocalUserDataSource
 import com.yongjincompany.data.remote.datasource.RemoteImagesDataSource
 import com.yongjincompany.data.remote.datasource.RemoteUserDataSource
+import com.yongjincompany.data.remote.request.users.ChangePasswordRequest
 import com.yongjincompany.data.remote.request.users.UpdateMyInfoRequest
 import com.yongjincompany.data.remote.request.users.UserRegisterRequest
 import com.yongjincompany.data.remote.request.users.UserSignInRequest
@@ -10,6 +11,7 @@ import com.yongjincompany.data.remote.response.users.UserSignInResponse
 import com.yongjincompany.data.util.OfflineCacheUtil
 import com.yongjincompany.data.util.toMultipart
 import com.yongjincompany.domain.entity.users.FetchMyInfoEntity
+import com.yongjincompany.domain.param.user.ChangePasswordParam
 import com.yongjincompany.domain.param.user.PostUserRegisterParam
 import com.yongjincompany.domain.param.user.PostUserSignInParam
 import com.yongjincompany.domain.param.user.UpdateMyInfoParam
@@ -20,10 +22,10 @@ import javax.inject.Inject
 class UserRepositoryImpl @Inject constructor(
     private val localUserDataSource: LocalUserDataSource,
     private val remoteUserDateSource: RemoteUserDataSource,
-    private val remoteImagesDataSource: RemoteImagesDataSource
+    private val remoteImagesDataSource: RemoteImagesDataSource,
 ) : UserRepository {
     override suspend fun postUserRegister(
-        postUserRegisterParam: PostUserRegisterParam
+        postUserRegisterParam: PostUserRegisterParam,
     ) {
         val postUserSignInParam = PostUserSignInParam(
             accountId = postUserRegisterParam.accountId,
@@ -83,7 +85,7 @@ class UserRepositoryImpl @Inject constructor(
     private suspend fun saveTokenSignUp(
         accessToken: String,
         refreshToken: String,
-        expiredAt: String
+        expiredAt: String,
     ) {
         localUserDataSource.apply {
             setAccessToken(accessToken)
@@ -97,6 +99,12 @@ class UserRepositoryImpl @Inject constructor(
             setId(userSignInParam.accountId)
             setPw(userSignInParam.password)
         }
+    }
+
+    override suspend fun changePassword(
+        changePasswordParam: ChangePasswordParam
+    ) {
+        remoteUserDateSource.changePassword(changePasswordParam.toRequest())
     }
 
     fun PostUserRegisterParam.toRequest() =
@@ -116,6 +124,12 @@ class UserRepositoryImpl @Inject constructor(
         UpdateMyInfoRequest(
             name = name,
             profileUrl = profileUrl
+        )
+
+    fun ChangePasswordParam.toRequest() =
+        ChangePasswordRequest(
+            oldPassword = oldPassword,
+            newPassword = newPassword
         )
 
 }
