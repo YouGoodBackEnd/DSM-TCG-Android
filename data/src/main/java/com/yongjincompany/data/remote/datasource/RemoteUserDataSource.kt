@@ -30,4 +30,6 @@ interface RemoteUserDataSource {
     )
 
     suspend fun logOut()
+
+    suspend fun deleteAccount()
 }
