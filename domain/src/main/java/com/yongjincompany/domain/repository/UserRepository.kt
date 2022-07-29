@@ -29,4 +29,6 @@ interface UserRepository {
     )
 
     suspend fun logOut()
+
+    suspend fun deleteAccount()
 }
