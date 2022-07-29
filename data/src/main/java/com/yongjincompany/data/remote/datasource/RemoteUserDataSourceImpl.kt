@@ -41,4 +41,10 @@ class RemoteUserDataSourceImpl @Inject constructor(
         HttpHandler<Unit>()
             .httpRequest { userApi.changePassword(changePasswordRequest) }
             .sendRequest()
+
+    override suspend fun logOut() {
+        HttpHandler<Unit>()
+            .httpRequest { userApi.logOut() }
+            .sendRequest()
+    }
 }
