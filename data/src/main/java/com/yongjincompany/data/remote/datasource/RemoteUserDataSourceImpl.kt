@@ -47,4 +47,10 @@ class RemoteUserDataSourceImpl @Inject constructor(
             .httpRequest { userApi.logOut() }
             .sendRequest()
     }
+
+    override suspend fun deleteAccount() {
+        HttpHandler<Unit>()
+            .httpRequest { userApi.deleteAccount() }
+            .sendRequest()
+    }
 }
