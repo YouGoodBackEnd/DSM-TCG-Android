@@ -111,6 +111,10 @@ class UserRepositoryImpl @Inject constructor(
         remoteUserDateSource.logOut()
     }
 
+    override suspend fun deleteAccount() {
+        remoteUserDateSource.deleteAccount()
+    }
+
     fun PostUserRegisterParam.toRequest() =
         UserRegisterRequest(
             accountId = accountId,
