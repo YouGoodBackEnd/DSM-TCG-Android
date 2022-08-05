@@ -24,6 +24,9 @@
             android:name=".ui.register.RegisterActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.MyPageActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.StartActivity"
             android:exported="true">
             <intent-filter>
