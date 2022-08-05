@@ -1,7 +1,7 @@
 package com.yongjincompany.dsmtcg.di
 
-import com.yongjincompany.data.repository.*
-import com.yongjincompany.domain.repository.*
+import com.yongjincompany.data.repository.UserRepositoryImpl
+import com.yongjincompany.domain.repository.UserRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -20,7 +20,7 @@ abstract class RepositoryModule {
 
     @Binds
     abstract fun provideUserRepository(
-        userRepositoryImpl: UserRepositoryImpl,
+        userRepositoryImpl: UserRepositoryImpl
     ): UserRepository
 
 }

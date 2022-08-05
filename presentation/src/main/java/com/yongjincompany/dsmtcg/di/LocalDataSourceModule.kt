@@ -1,8 +1,11 @@
 package com.yongjincompany.dsmtcg.di
 
-import com.yongjincompany.data.local.datasource.*
+
+import com.yongjincompany.data.local.datasource.LocalUserDataSource
+import com.yongjincompany.data.local.datasource.LocalUserDataSourceImpl
 import dagger.Binds
 import dagger.Module
+import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 
