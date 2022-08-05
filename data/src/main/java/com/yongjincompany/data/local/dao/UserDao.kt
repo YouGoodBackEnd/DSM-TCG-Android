@@ -1,10 +1,12 @@
 package com.yongjincompany.data.local.dao
 
+import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.yongjincompany.data.local.entity.user.FetchMyInfoRoomEntity
 
+@Dao
 interface UserDao {
     @Query("SELECT * FROM myInfo")
     suspend fun fetchMyInfo() : FetchMyInfoRoomEntity
