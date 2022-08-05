@@ -25,7 +25,7 @@
             android:fontFamily="@font/nanumsquare_aceb"
             android:text="홈"
             android:textColor="@color/black"
-            android:textSize="35sp"
+            android:textSize="32sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
