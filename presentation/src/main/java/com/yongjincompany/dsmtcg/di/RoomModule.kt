@@ -33,6 +33,7 @@ object RoomModule {
         moshi: Moshi,
     ): DSMTCGDataBase = Room
         .databaseBuilder(context, DSMTCGDataBase::class.java, "DSMDataBase")
+        .addTypeConverter(CardListTypeConverter(moshi))
         .build()
 
     @Provides
