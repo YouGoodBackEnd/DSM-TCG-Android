@@ -1,17 +1,45 @@
 package com.yongjincompany.data.local.entity.user
 
+import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.yongjincompany.data.local.entity.card.FetchMyCardRoomEntity
+import com.yongjincompany.domain.entity.cards.FetchMyCardEntity
 import com.yongjincompany.domain.entity.users.FetchMyInfoEntity
 
 @Entity(tableName = "myInfo")
 data class FetchMyInfoRoomEntity(
     @PrimaryKey val userId: Long,
-    @PrimaryKey val accountId: String,
     val name: String,
     val profileUrl: String,
     val rank: Int,
-)
+    @Embedded val cardCount: CardCount
+) {
+    data class CardCount(
+        val agradeCardCount: Int,
+        val bgradeCardCount: Int,
+        val cgradeCardCount: Int,
+        val sgradeCardCount: Int,
+        val ssgradeCardCount: Int,
+    )
+
+    fun FetchMyInfoRoomEntity.CardCount.toEntity() =
+        FetchMyInfoEntity.CardCount(
+            agradeCardCount = agradeCardCount,
+            bgradeCardCount = bgradeCardCount,
+            cgradeCardCount = cgradeCardCount,
+            sgradeCardCount = sgradeCardCount,
+            ssgradeCardCount = ssgradeCardCount
+        )
+}
+fun FetchMyInfoEntity.CardCount.toDbEntity() =
+    FetchMyInfoRoomEntity.CardCount(
+        agradeCardCount = agradeCardCount,
+        bgradeCardCount = bgradeCardCount,
+        cgradeCardCount = cgradeCardCount,
+        sgradeCardCount = sgradeCardCount,
+        ssgradeCardCount = ssgradeCardCount
+    )
 
 fun FetchMyInfoRoomEntity.toEntity() =
     FetchMyInfoEntity(
@@ -19,7 +47,7 @@ fun FetchMyInfoRoomEntity.toEntity() =
         profileUrl = profileUrl,
         rank = rank,
         userId = userId,
-        accountId = accountId
+        cardCount = cardCount.toEntity()
     )
 
 fun FetchMyInfoEntity.toDbEntity() =
@@ -28,5 +56,5 @@ fun FetchMyInfoEntity.toDbEntity() =
         profileUrl = profileUrl,
         rank = rank,
         userId = userId,
-        accountId = accountId
+        cardCount = cardCount.toDbEntity()
     )
