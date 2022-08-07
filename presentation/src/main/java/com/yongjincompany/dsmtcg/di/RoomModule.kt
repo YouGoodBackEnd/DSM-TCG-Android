@@ -4,6 +4,8 @@ import android.content.Context
 import androidx.room.Room
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import com.yongjincompany.data.local.converter.CardListTypeConverter
+import com.yongjincompany.data.local.dao.CardDao
 import com.yongjincompany.data.local.dao.UserDao
 import com.yongjincompany.data.local.database.DSMTCGDataBase
 import dagger.Module
@@ -31,7 +33,6 @@ object RoomModule {
         moshi: Moshi,
     ): DSMTCGDataBase = Room
         .databaseBuilder(context, DSMTCGDataBase::class.java, "DSMDataBase")
-
         .build()
 
     @Provides
@@ -39,4 +40,8 @@ object RoomModule {
         dsmtcgDataBase: DSMTCGDataBase,
     ): UserDao = dsmtcgDataBase.userDao()
 
+    @Provides
+    fun provideCardDao(
+        dsmtcgDataBase: DSMTCGDataBase
+    ): CardDao = dsmtcgDataBase.cardDao()
 }
