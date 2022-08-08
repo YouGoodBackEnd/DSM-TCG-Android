@@ -72,4 +72,8 @@ object NetWorkModule {
     @Provides
     fun provideImageApi(retrofit: Retrofit): ImagesApi =
         retrofit.create(ImagesApi::class.java)
+
+    @Provides
+    fun provideCardApi(retrofit: Retrofit): CardApi =
+        retrofit.create(CardApi::class.java)
 }
