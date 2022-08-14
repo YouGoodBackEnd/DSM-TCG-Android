@@ -6,10 +6,6 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface CardApi {
-    @POST("cards/draw/free")
-    suspend fun drawFreeCard(
-    ): FreeCardResponse
-
     @GET("cards")
     suspend fun fetchMyCard(
     ): FetchMyCardResponse
