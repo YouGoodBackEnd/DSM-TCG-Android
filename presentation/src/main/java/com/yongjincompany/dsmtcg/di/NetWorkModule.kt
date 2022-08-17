@@ -76,4 +76,8 @@ object NetWorkModule {
     @Provides
     fun provideCardApi(retrofit: Retrofit): CardApi =
         retrofit.create(CardApi::class.java)
+
+    @Provides
+    fun provideChestApi(retrofit: Retrofit): ChestApi =
+        retrofit.create(ChestApi::class.java)
 }
