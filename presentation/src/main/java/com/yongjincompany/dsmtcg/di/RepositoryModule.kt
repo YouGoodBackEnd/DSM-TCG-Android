@@ -1,8 +1,10 @@
 package com.yongjincompany.dsmtcg.di
 
 import com.yongjincompany.data.repository.CardRepositoryImpl
+import com.yongjincompany.data.repository.ChestRepositoryImpl
 import com.yongjincompany.data.repository.UserRepositoryImpl
 import com.yongjincompany.domain.repository.CardRepository
+import com.yongjincompany.domain.repository.ChestRepository
 import com.yongjincompany.domain.repository.UserRepository
 import dagger.Binds
 import dagger.Module
@@ -22,12 +24,16 @@ abstract class RepositoryModule {
 
     @Binds
     abstract fun provideUserRepository(
-        userRepositoryImpl: UserRepositoryImpl
+        userRepositoryImpl: UserRepositoryImpl,
     ): UserRepository
 
     @Binds
     abstract fun provideCardRepository(
-        cardRepositoryImpl: CardRepositoryImpl
+        cardRepositoryImpl: CardRepositoryImpl,
     ): CardRepository
 
+    @Binds
+    abstract fun provideChestRepository(
+        chestRepositoryImpl: ChestRepositoryImpl,
+    ): ChestRepository
 }
