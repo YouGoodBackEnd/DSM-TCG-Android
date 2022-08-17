@@ -31,4 +31,9 @@ abstract class RemoteDataSourceModule {
         remoteCardDataSourceImpl: RemoteCardDataSourceImpl
     ): RemoteCardDataSource
 
+    @Binds
+    abstract fun provideRemoteChestDataSource(
+        remoteChestDataSourceImpl: RemoteChestDataSourceImpl
+    ): RemoteChestDataSource
+
 }
