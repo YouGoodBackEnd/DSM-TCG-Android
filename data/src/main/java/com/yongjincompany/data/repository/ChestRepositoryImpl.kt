@@ -12,6 +12,6 @@ class ChestRepositoryImpl @Inject constructor(
 ): ChestRepository {
     override suspend fun fetchFreeChestTime(): Flow<FetchFreeChestTimeEntity> =
         OfflineCacheUtil<FetchFreeChestTimeEntity>()
-            .remoteData { remoteChestDataSource.fetchFreeChsetTime() }
+            .remoteData { remoteChestDataSource.fetchFreeChestTime() }
             .createFlow()
 }

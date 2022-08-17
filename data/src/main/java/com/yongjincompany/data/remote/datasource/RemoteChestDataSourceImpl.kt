@@ -10,7 +10,7 @@ import javax.inject.Inject
 class RemoteChestDataSourceImpl @Inject constructor(
     private val chestApi: ChestApi,
 ) : RemoteChestDataSource {
-    override suspend fun fetchFreeChsetTime(): FetchFreeChestTimeEntity =
+    override suspend fun fetchFreeChestTime(): FetchFreeChestTimeEntity =
         HttpHandler<FreeChestOpenResponse>()
             .httpRequest { chestApi.getFreeChestTime() }
             .sendRequest().toEntity()
