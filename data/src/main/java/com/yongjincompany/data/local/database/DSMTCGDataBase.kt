@@ -6,11 +6,13 @@ import androidx.room.TypeConverters
 import com.yongjincompany.data.local.converter.CardListTypeConverter
 import com.yongjincompany.data.local.dao.CardDao
 import com.yongjincompany.data.local.dao.UserDao
+import com.yongjincompany.data.local.entity.card.FetchMyCardRoomEntity
 import com.yongjincompany.data.local.entity.user.FetchMyInfoRoomEntity
 
 @Database(
     entities = [
-        FetchMyInfoRoomEntity::class
+        FetchMyInfoRoomEntity::class,
+        FetchMyCardRoomEntity::class
     ], version = 1, exportSchema = false
 )
 
