@@ -17,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 @Module
 @InstallIn(SingletonComponent::class)
 object NetWorkModule {
-    private const val BASE_URL = "https://"
+    private const val BASE_URL = "http://52.5.10.3:8080"
     private const val SOCKET_BASE_URL = "http://"
 
     @Provides
@@ -80,4 +80,8 @@ object NetWorkModule {
     @Provides
     fun provideChestApi(retrofit: Retrofit): ChestApi =
         retrofit.create(ChestApi::class.java)
+
+    @Provides
+    fun provideRankApi(retrofit: Retrofit): RankApi =
+        retrofit.create(RankApi::class.java)
 }
