@@ -11,6 +11,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:name=".di.DSMTCGApplication"
         android:theme="@style/Theme.DSMTCG"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
@@ -27,7 +28,14 @@
             android:name=".ui.MyPageActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.StartActivity"
+            android:name=".ui.mycard.CardDetailActivity"
+            android:exported="false" />
+
+        <activity android:name=".ui.StartActivity"
+            android:exported="false"/>
+
+        <activity
+            android:name=".ui.splash.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
