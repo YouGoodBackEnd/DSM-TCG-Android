@@ -3,9 +3,7 @@ package com.yongjincompany.data.local.entity.card
 import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.yongjincompany.data.local.entity.user.FetchMyInfoRoomEntity
 import com.yongjincompany.domain.entity.cards.FetchMyCardEntity
-import com.yongjincompany.domain.entity.cards.FreeCardEntity
 
 @Entity(tableName = "myCard")
 data class FetchMyCardRoomEntity(
