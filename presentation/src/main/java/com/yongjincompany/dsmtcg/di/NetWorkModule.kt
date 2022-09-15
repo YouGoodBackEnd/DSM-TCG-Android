@@ -37,7 +37,7 @@ object NetWorkModule {
             .addInterceptor(authorizationInterceptor)
             .build()
 
-    @Provides
+  /*  @Provides
     fun provideOptions(
         okHttpClient: OkHttpClient,
     ): IO.Options {
@@ -53,7 +53,7 @@ object NetWorkModule {
         options: IO.Options,
     ): Socket {
         return IO.socket(SOCKET_BASE_URL, options)
-    }
+    }*/
 
     @Provides
     fun provideRetrofit(
