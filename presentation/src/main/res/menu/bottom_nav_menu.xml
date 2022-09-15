@@ -3,7 +3,7 @@
 
     <item
         android:id="@+id/navigation_shop"
-        android:icon="@drawable/ic_card"
+        android:icon="@drawable/ic_round"
         android:title="상점" />
 
     <item
@@ -13,6 +13,6 @@
 
     <item
         android:id="@+id/navigation_mycard"
-        android:icon="@drawable/ic_round"
+        android:icon="@drawable/ic_card"
         android:title="내 카드" />
 </menu>
