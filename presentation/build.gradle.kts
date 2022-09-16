@@ -10,7 +10,7 @@ android {
     compileSdk = Project.compileSdk
 
     defaultConfig {
-        applicationId = "com.semicolon.walkhub"
+        applicationId = "com.yongjincompany.dsmtcg"
         minSdk = Project.minSdk
         targetSdk = Project.targetSdk
         versionCode = 1
