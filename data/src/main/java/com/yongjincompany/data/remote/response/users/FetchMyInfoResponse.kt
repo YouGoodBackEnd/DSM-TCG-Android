@@ -5,7 +5,7 @@ import com.yongjincompany.domain.entity.users.FetchMyInfoEntity
 
 data class FetchMyInfoResponse(
     @SerializedName("name") val name: String,
-    @SerializedName("profile_url") val profileUrl: String,
+    @SerializedName("profile_image_url") val profileImageUrl: String,
     @SerializedName("rank") val rank: Int,
     @SerializedName("user_id") val userId: Long,
     @SerializedName("card_count") val cardCount: CardCount,
@@ -31,7 +31,7 @@ data class FetchMyInfoResponse(
 fun FetchMyInfoResponse.toEntity() =
     FetchMyInfoEntity(
         name = name,
-        profileUrl = profileUrl,
+        profileImageUrl = profileImageUrl,
         rank = rank,
         userId = userId,
         cardCount = cardCount.toEntity()
