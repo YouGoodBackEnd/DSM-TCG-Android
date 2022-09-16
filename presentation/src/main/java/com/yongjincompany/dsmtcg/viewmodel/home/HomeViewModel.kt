@@ -42,10 +42,19 @@ class HomeViewModel @Inject constructor(
     private fun FetchMyInfoEntity.toData() =
         FetchMyInfoEntity(
             name = name,
-            profileUrl = profileUrl,
+            profileImageUrl = profileImageUrl,
             rank = rank,
             userId = userId,
-            cardCount = cardCount
+            cardCount = cardCount.toData()
+        )
+
+    private fun FetchMyInfoEntity.CardCount.toData() =
+        FetchMyInfoEntity.CardCount(
+            agradeCardCount = agradeCardCount,
+            bgradeCardCount = bgradeCardCount,
+            cgradeCardCount = cgradeCardCount,
+            sgradeCardCount = sgradeCardCount,
+            ssgradeCardCount = ssgradeCardCount
         )
 
     private fun event(event: Event) {
