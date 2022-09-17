@@ -10,8 +10,9 @@ import javax.inject.Inject
 
 class LocalUserDataSourceImpl @Inject constructor(
     private val userDao: UserDao,
-    private val authDataStorage: AuthDataStorage
+    private val authDataStorage: AuthDataStorage,
 ) : LocalUserDataSource {
+
     override suspend fun setAccessToken(token: String) {
         authDataStorage.setAccessToken(token)
     }
@@ -67,6 +68,6 @@ class LocalUserDataSourceImpl @Inject constructor(
         userDao.fetchMyInfo().toEntity()
 
     override suspend fun insertMyInfo(fetchMyInfoEntity: FetchMyInfoEntity) {
-        userDao.insertMyInfo(fetchMyInfoEntity.toDbEntity())
+        fetchMyInfoEntity.toDbEntity()?.let { userDao.insertMyInfo(it) }
     }
 }
