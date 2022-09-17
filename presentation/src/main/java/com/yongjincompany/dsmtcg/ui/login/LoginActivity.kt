@@ -35,7 +35,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
             vm.postLogin(accountId, password)
         }
 
-        binding.ibBack.setOnClickListener {
+        binding.ivBack.setOnClickListener {
             finish()
         }
 
