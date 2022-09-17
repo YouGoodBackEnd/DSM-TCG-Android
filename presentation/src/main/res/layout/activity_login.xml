@@ -23,7 +23,7 @@
             android:src="@drawable/ic_exit"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp" />
 
         <EditText
@@ -33,7 +33,7 @@
             android:hint="아이디"
             android:textColorHint="#BDBDBD"
             android:textColor="#212121"
-            android:paddingLeft="14dp"
+            android:paddingStart="14dp"
             android:background="@drawable/editext_back"
             android:privateImeOptions="defaultInputmode=english"
             android:layout_marginHorizontal="16dp"
@@ -49,7 +49,7 @@
             android:hint="비밀번호"
             android:textColorHint="#BDBDBD"
             android:textColor="#212121"
-            android:paddingLeft="14dp"
+            android:paddingStart="14dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/editext_back"
             android:inputType="textPassword"
@@ -59,11 +59,11 @@
             app:layout_constraintTop_toBottomOf="@id/et_id"/>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/bt_login"
+            android:id="@+id/btn_login"
             android:layout_width="0dp"
             android:layout_height="56dp"
             android:text="로그인하기"
-            android:textSize="17dp"
+            android:textSize="17sp"
             android:fontFamily="@font/nanumsquare_aceb"
             android:textColor="@color/white"
             android:background="@drawable/register_btn"
