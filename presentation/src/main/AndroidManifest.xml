@@ -25,7 +25,7 @@
             android:name=".ui.register.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.MyPageActivity"
+            android:name=".ui.home.profile.MyPageActivity"
             android:exported="false" />
         <activity
             android:name=".ui.mycard.CardDetailActivity"
