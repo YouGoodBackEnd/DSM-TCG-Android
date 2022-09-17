@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.yongjincompany.domain.entity.chests.FetchFreeChestTimeEntity
+import com.yongjincompany.domain.entity.chests.FetchSpecialChestTimeEntity
 import com.yongjincompany.domain.entity.users.FetchMyInfoEntity
 import com.yongjincompany.dsmtcg.R
 import com.yongjincompany.dsmtcg.base.BaseFragment
@@ -28,9 +29,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        vm.fetchFreeChest()
         vm.fetchMyInfoValue()
-
+        vm.fetchFreeChest()
+        vm.fetchSpecialChest()
 
         repeatOnStarted {
             vm.eventFlow.collect { event -> handleEvent(event) }
@@ -46,6 +47,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(
         is HomeViewModel.Event.FetchFreeChestTime -> {
             setFreeChestTimeValue(event.fetchFreeChestTimeEntity)
         }
+        is HomeViewModel.Event.FetchSpecialChestTime -> {
+            setSpecialChestTimeValue(event.fetchSpecialChestTimeEntity)
+        }
         is HomeViewModel.Event.ErrorMessage -> {
             showShortToast(event.message)
         }
@@ -60,14 +64,20 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(
     }
 
     private fun setProfileValue(profileData: FetchMyInfoEntity) {
-        binding.name.text = profileData.name
+        binding.tvName.text = profileData.name
         val tvRank = binding.tvRank
-        if (tvRank.text == "0") tvRank.text = profileData.rank.toString() else tvRank.text = "랭크 순위권 외"
-        profileData.profileImageUrl.let { binding.myImage.loadCircleFromUrl(it) }
+        if (tvRank.text == "0") tvRank.text = profileData.rank.toString() else tvRank.text =
+            "랭크 순위권 외"
+        profileData.profileImageUrl.let { binding.ivProfileImage.loadCircleFromUrl(it) }
     }
 
     private fun setFreeChestTimeValue(freeChestTimeData: FetchFreeChestTimeEntity) {
-        val tvFreeChest = binding.textView2
+        val tvFreeChest = binding.tvFreeChest
         if (freeChestTimeData.isOpened) tvFreeChest.text = "오픈 가능" else tvFreeChest.text = "안열림ㅅㄱ"
+    }
+
+    private fun setSpecialChestTimeValue(specialChestTimeData: FetchSpecialChestTimeEntity) {
+        val tvSpecialChest = binding.tvSpecialChest
+        if (specialChestTimeData.isOpened) tvSpecialChest.text = "오픈 가능" else tvSpecialChest.text = "안열림ㅅㄱ"
     }
 }

@@ -35,10 +35,10 @@
             android:layout_marginStart="-12dp"
             android:layout_marginEnd="12dp"
             android:background="@drawable/bamboo_background"
-            app:layout_constraintBottom_toBottomOf="@+id/bamboo_count"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_bamboo_count"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="@+id/bamboo_count" />
+            app:layout_constraintTop_toTopOf="@+id/tv_bamboo_count" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imageView"
@@ -48,12 +48,12 @@
             android:src="@drawable/bamboo"
             app:civ_border_color="@color/white"
             app:civ_border_width="0.7dp"
-            app:layout_constraintBottom_toBottomOf="@+id/bamboo_count"
-            app:layout_constraintEnd_toStartOf="@+id/bamboo_count"
-            app:layout_constraintTop_toTopOf="@+id/bamboo_count" />
+            app:layout_constraintBottom_toBottomOf="@+id/tv_bamboo_count"
+            app:layout_constraintEnd_toStartOf="@+id/tv_bamboo_count"
+            app:layout_constraintTop_toTopOf="@+id/tv_bamboo_count" />
 
         <TextView
-            android:id="@+id/bamboo_count"
+            android:id="@+id/tv_bamboo_count"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -85,7 +85,7 @@
                 android:layout_height="match_parent">
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/my_image"
+                    android:id="@+id/iv_profile_image"
                     android:layout_width="56dp"
                     android:layout_height="56dp"
                     android:layout_marginStart="4dp"
@@ -95,7 +95,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/name"
+                    android:id="@+id/tv_name"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -106,7 +106,7 @@
                     android:textColor="@color/black"
                     android:textSize="17sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/my_image"
+                    app:layout_constraintStart_toEndOf="@+id/iv_profile_image"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
@@ -116,8 +116,8 @@
                     android:layout_marginTop="2dp"
                     android:text="랭킹 1등"
                     android:textSize="12sp"
-                    app:layout_constraintStart_toStartOf="@+id/name"
-                    app:layout_constraintTop_toBottomOf="@+id/name" />
+                    app:layout_constraintStart_toStartOf="@+id/tv_name"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_name" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
@@ -160,7 +160,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/tv_free_chest"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -173,15 +173,16 @@
                     app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
                 <TextView
+                    android:id="@+id/tv_free_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:fontFamily="@font/nanumsquare_aceb"
                     android:text="하루에 한 번!"
                     android:textSize="11sp"
-                    app:layout_constraintEnd_toEndOf="@+id/textView2"
-                    app:layout_constraintStart_toStartOf="@+id/textView2"
-                    app:layout_constraintTop_toBottomOf="@+id/textView2" />
+                    app:layout_constraintEnd_toEndOf="@+id/tv_free_chest"
+                    app:layout_constraintStart_toStartOf="@+id/tv_free_chest"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_free_chest" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -213,7 +214,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/tv_special_chest"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -232,9 +233,9 @@
                     android:fontFamily="@font/nanumsquare_aceb"
                     android:text="일주일에 한 번!"
                     android:textSize="11sp"
-                    app:layout_constraintEnd_toEndOf="@+id/textView3"
-                    app:layout_constraintStart_toStartOf="@+id/textView3"
-                    app:layout_constraintTop_toBottomOf="@+id/textView3" />
+                    app:layout_constraintEnd_toEndOf="@+id/tv_special_chest"
+                    app:layout_constraintStart_toStartOf="@+id/tv_special_chest"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_special_chest" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
@@ -245,14 +246,14 @@
             android:layout_height="0dp"
             android:layout_marginTop="8dp"
             android:src="@drawable/arena"
-            app:layout_constraintBottom_toTopOf="@+id/appCompatButton2"
+            app:layout_constraintBottom_toTopOf="@+id/btn_trade"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/free_cardpack" />
 
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/appCompatButton2"
+            android:id="@+id/btn_trade"
             android:layout_width="120dp"
             android:layout_height="56dp"
             android:layout_marginBottom="36dp"
