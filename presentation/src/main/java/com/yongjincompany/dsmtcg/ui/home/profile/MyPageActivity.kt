@@ -41,21 +41,23 @@ class MyPageActivity : BaseActivity<ActivityMyPageBinding>(
         is HomeViewModel.Event.ErrorMessage -> {
             showShortToast(event.message)
         }
+        is HomeViewModel.Event.FetchFreeChestTime -> TODO()
+        is HomeViewModel.Event.FetchSpecialChestTime -> TODO()
     }
     override fun initView() {
-        binding.exit.setOnClickListener {
+        binding.ivExit.setOnClickListener {
             finish()
         }
     }
 
     private fun setProfileValue(profileData: FetchMyInfoEntity) {
-        binding.a.text = profileData.cardCount.agradeCardCount.toString()
-        binding.b.text = profileData.cardCount.bgradeCardCount.toString()
-        binding.c.text = profileData.cardCount.cgradeCardCount.toString()
-        binding.s.text = profileData.cardCount.sgradeCardCount.toString()
-        binding.ss.text = profileData.cardCount.ssgradeCardCount.toString()
-        binding.playerName.text = profileData.name
-        val tvRank = binding.rank
+        binding.tvA.text = profileData.cardCount.agradeCardCount.toString()
+        binding.tvB.text = profileData.cardCount.bgradeCardCount.toString()
+        binding.tvC.text = profileData.cardCount.cgradeCardCount.toString()
+        binding.tvS.text = profileData.cardCount.sgradeCardCount.toString()
+        binding.tvSs.text = profileData.cardCount.ssgradeCardCount.toString()
+        binding.tvName.text = profileData.name
+        val tvRank = binding.tvRank
         if (tvRank.text == "0") tvRank.text = profileData.rank.toString() else tvRank.text = "랭크 순위권 외"
         profileData.profileImageUrl.let { binding.ivProfile.loadCircleFromUrl(it) }
     }

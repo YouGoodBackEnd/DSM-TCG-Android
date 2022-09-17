@@ -8,7 +8,7 @@
         android:background="#F1F1F1">
 
         <ImageView
-            android:id="@+id/exit"
+            android:id="@+id/iv_exit"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center"
@@ -37,7 +37,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/player_name"
+                    android:id="@+id/tv_name"
                     android:layout_width="wrap_content"
                     android:layout_height="28dp"
                     android:layout_marginTop="52dp"
@@ -62,7 +62,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/ss"
+                    android:id="@+id/tv_ss"
                     android:layout_width="wrap_content"
                     android:layout_height="24dp"
                     android:layout_marginTop="4dp"
@@ -87,7 +87,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/s"
+                    android:id="@+id/tv_s"
                     android:layout_width="wrap_content"
                     android:layout_height="24dp"
                     android:layout_marginTop="4dp"
@@ -114,7 +114,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/a"
+                    android:id="@+id/tv_a"
                     android:layout_width="wrap_content"
                     android:layout_height="24dp"
                     android:layout_marginTop="4dp"
@@ -141,7 +141,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/b"
+                    android:id="@+id/tv_b"
                     android:layout_width="wrap_content"
                     android:layout_height="24dp"
                     android:layout_marginTop="4dp"
@@ -168,7 +168,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/c"
+                    android:id="@+id/tv_c"
                     android:layout_width="wrap_content"
                     android:layout_height="24dp"
                     android:layout_marginTop="4dp"
@@ -218,7 +218,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/grade_logo"
+                    android:id="@+id/iv_rank"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_marginStart="16dp"
@@ -229,7 +229,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/rank_grade"
+                    android:id="@+id/tv_rank_grade"
                     android:layout_width="wrap_content"
                     android:layout_height="24dp"
                     android:layout_marginStart="16dp"
@@ -239,19 +239,19 @@
                     android:text="#1"
                     android:textColor="@color/black"
                     android:textSize="16sp"
-                    app:layout_constraintStart_toEndOf="@+id/grade_logo"
+                    app:layout_constraintStart_toEndOf="@+id/iv_rank"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/rank"
+                    android:id="@+id/tv_rank"
                     android:layout_width="wrap_content"
                     android:layout_height="18dp"
                     android:fontFamily="@font/nanumsquare_aceb"
                     android:gravity="center"
                     android:text="랭킹 1위"
                     android:textSize="12sp"
-                    app:layout_constraintStart_toStartOf="@+id/rank_grade"
-                    app:layout_constraintTop_toBottomOf="@+id/rank_grade" />
+                    app:layout_constraintStart_toStartOf="@+id/tv_rank_grade"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_rank_grade" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
