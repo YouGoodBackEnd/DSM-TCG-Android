@@ -11,7 +11,7 @@ import com.yongjincompany.domain.entity.users.FetchMyInfoEntity
 data class FetchMyInfoRoomEntity(
     @PrimaryKey val userId: Long,
     val name: String,
-    val profileUrl: String,
+    val profileImageUrl: String,
     val rank: Int,
     @Embedded val cardCount: CardCount
 ) {
@@ -23,7 +23,7 @@ data class FetchMyInfoRoomEntity(
         val ssgradeCardCount: Int,
     )
 
-    fun FetchMyInfoRoomEntity.CardCount.toEntity() =
+    fun CardCount.toEntity() =
         FetchMyInfoEntity.CardCount(
             agradeCardCount = agradeCardCount,
             bgradeCardCount = bgradeCardCount,
@@ -44,17 +44,19 @@ fun FetchMyInfoEntity.CardCount.toDbEntity() =
 fun FetchMyInfoRoomEntity.toEntity() =
     FetchMyInfoEntity(
         name = name,
-        profileUrl = profileUrl,
+        profileImageUrl = profileImageUrl,
         rank = rank,
         userId = userId,
         cardCount = cardCount.toEntity()
     )
 
 fun FetchMyInfoEntity.toDbEntity() =
-    FetchMyInfoRoomEntity(
-        name = name,
-        profileUrl = profileUrl,
-        rank = rank,
-        userId = userId,
-        cardCount = cardCount.toDbEntity()
-    )
+    rank?.let {
+        FetchMyInfoRoomEntity(
+            name = name,
+            profileImageUrl = profileImageUrl,
+            rank = rank!!,
+            userId = userId,
+            cardCount = cardCount.toDbEntity()
+        )
+    }
