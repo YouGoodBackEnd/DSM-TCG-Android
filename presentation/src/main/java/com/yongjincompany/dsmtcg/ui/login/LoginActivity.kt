@@ -35,10 +35,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
             vm.postLogin(accountId, password)
         }
 
-        binding.ivBack.setOnClickListener {
-            finish()
-        }
-
         repeatOnStarted {
             vm.eventFlow.collect { event -> handleEvent(event) }
         }
@@ -72,6 +68,8 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
     }
 
     override fun initView() {
-
+        binding.ivBack.setOnClickListener {
+            finish()
+        }
     }
 }
