@@ -41,4 +41,10 @@ class OfflineCacheUtil<T> {
                 emit(remoteData)
             }
         }
+
+    fun createRemoteFlow(): Flow<T> =
+        flow {
+            val remoteData = fetchRemoteData()
+            emit(remoteData)
+        }
 }
