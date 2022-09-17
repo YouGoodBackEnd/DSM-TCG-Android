@@ -2,9 +2,12 @@ package com.yongjincompany.dsmtcg.viewmodel.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.yongjincompany.domain.entity.chests.FetchFreeChestTimeEntity
 import com.yongjincompany.domain.entity.users.FetchMyInfoEntity
 import com.yongjincompany.domain.exception.BadRequestException
 import com.yongjincompany.domain.exception.UnauthorizedException
+import com.yongjincompany.domain.usecase.chest.FetchFreeChestTimeUseCase
+import com.yongjincompany.domain.usecase.chest.FetchSpecialChestTimeUseCase
 import com.yongjincompany.domain.usecase.user.FetchMyInfoUseCase
 import com.yongjincompany.dsmtcg.util.MutableEventFlow
 import com.yongjincompany.dsmtcg.util.asEventFlow
@@ -17,8 +20,9 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val fetchMyInfoUseCase: FetchMyInfoUseCase,
-
-    ) : ViewModel() {
+    private val fetchFreeChestTimeUseCase: FetchFreeChestTimeUseCase,
+    private val fetchSpecialChestTimeUseCase: FetchSpecialChestTimeUseCase,
+) : ViewModel() {
 
     private val _eventFlow = MutableEventFlow<Event>()
     val eventFlow = _eventFlow.asEventFlow()
@@ -38,6 +42,26 @@ class HomeViewModel @Inject constructor(
             }
         }
     }
+
+    fun fetchFreeChest() {
+        viewModelScope.launch {
+            kotlin.runCatching {
+                fetchFreeChestTimeUseCase.execute(Unit).collect {
+                    event(Event.FetchFreeChestTime(it.toData()))
+                }
+            }.onFailure {
+                when (it) {
+                    is UnauthorizedException -> event(Event.ErrorMessage("토큰이 만료되었습니다. 다시 로그인해주세요."))
+                    else -> event(Event.ErrorMessage("알 수 없는 에러가 발생했습니다."))
+                }
+            }
+        }
+    }
+    private fun FetchFreeChestTimeEntity.toData() =
+        FetchFreeChestTimeEntity(
+            chestOpenDateTime = chestOpenDateTime,
+            isOpened = isOpened
+        )
 
     private fun FetchMyInfoEntity.toData() =
         FetchMyInfoEntity(
@@ -65,6 +89,7 @@ class HomeViewModel @Inject constructor(
 
     sealed class Event {
         data class FetchMyInfo(val fetchMyInfoEntity: FetchMyInfoEntity) : Event()
+        data class FetchFreeChestTime(val fetchFreeChestTimeEntity: FetchFreeChestTimeEntity) : Event()
         data class ErrorMessage(val message: String) : Event()
     }
 }
