@@ -24,18 +24,18 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
 
-        binding.btLogin.setOnClickListener {
+        binding.btnLogin.setOnClickListener {
             loginToast()
         }
 
-        binding.btLogin.setOnClickListener {
+        binding.btnLogin.setOnClickListener {
             val accountId: String = binding.etId.text.toString()
             val password: String = binding.etPassword.text.toString()
 
             vm.postLogin(accountId, password)
         }
 
-        binding.ibBack.setOnClickListener {
+        binding.ivBack.setOnClickListener {
             finish()
         }
 
@@ -45,7 +45,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
     }
 
     private fun handleEvent(event: LoginViewModel.Event) = when (event) {
-        is LoginViewModel.Event.LoginSuccess-> {
+        is LoginViewModel.Event.LoginSuccess -> {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
@@ -64,13 +64,9 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
         val password = binding.etPassword.text
         if (id.isEmpty()) {
             Toast.makeText(this, "아이디를 입력해주세요", Toast.LENGTH_SHORT).show()
-        }
-
-        else if (id.isNotEmpty() && password.isEmpty()){
+        } else if (id.isNotEmpty() && password.isEmpty()) {
             Toast.makeText(this, "비밀번호를 입력해주세요.", Toast.LENGTH_SHORT).show()
-        }
-
-        else if (id.isNotEmpty() && password.isNotEmpty()){
+        } else if (id.isNotEmpty() && password.isNotEmpty()) {
 
         }
     }

@@ -14,7 +14,7 @@
         android:background="@color/white">
 
         <ImageButton
-            android:id="@+id/ibBack"
+            android:id="@+id/ivBack"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:adjustViewBounds="true"
@@ -40,7 +40,7 @@
             android:layout_marginTop="40dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ibBack"/>
+            app:layout_constraintTop_toBottomOf="@id/ivBack"/>
 
         <EditText
             android:id="@+id/et_password"
@@ -59,7 +59,7 @@
             app:layout_constraintTop_toBottomOf="@id/et_id"/>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/bt_login"
+            android:id="@+id/btn_login"
             android:layout_width="0dp"
             android:layout_height="56dp"
             android:text="로그인하기"
