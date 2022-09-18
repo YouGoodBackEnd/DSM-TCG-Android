@@ -35,5 +35,20 @@
             app:layout_constraintTop_toBottomOf="@+id/textView"
             tools:listitem="@layout/item_my_card" />
 
+        <TextView
+            android:id="@+id/tv_null_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nanumsquare_aceb"
+            android:text="보유 중인\n카드가 없습니다."
+            android:textSize="25sp"
+            android:gravity="center"
+            android:textColor="@color/black_87"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
