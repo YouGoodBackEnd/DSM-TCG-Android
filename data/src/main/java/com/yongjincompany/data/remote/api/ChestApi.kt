@@ -1,5 +1,6 @@
 package com.yongjincompany.data.remote.api
 
+import com.yongjincompany.data.remote.response.chests.FreeChestOpenResponse
 import com.yongjincompany.data.remote.response.chests.FreeChestOpenTimeResponse
 import com.yongjincompany.data.remote.response.chests.SpecialChestOpenTimeResponse
 import retrofit2.http.GET
@@ -12,4 +13,6 @@ interface ChestApi {
     @GET("chests/special")
     suspend fun getSpecialChestTime(): SpecialChestOpenTimeResponse
 
+    @POST("chests/free")
+    suspend fun openFreeChest(): FreeChestOpenResponse
 }
