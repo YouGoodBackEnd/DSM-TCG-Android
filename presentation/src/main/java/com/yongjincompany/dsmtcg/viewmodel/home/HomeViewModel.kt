@@ -3,6 +3,7 @@ package com.yongjincompany.dsmtcg.viewmodel.home
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.yongjincompany.domain.entity.chests.FetchFreeChestTimeEntity
+import com.yongjincompany.domain.entity.chests.FetchSpecialChestTimeEntity
 import com.yongjincompany.domain.entity.users.FetchMyInfoEntity
 import com.yongjincompany.domain.exception.BadRequestException
 import com.yongjincompany.domain.exception.UnauthorizedException
@@ -57,6 +58,28 @@ class HomeViewModel @Inject constructor(
             }
         }
     }
+
+    fun fetchSpecialChest() {
+        viewModelScope.launch {
+            kotlin.runCatching {
+                fetchSpecialChestTimeUseCase.execute(Unit).collect {
+                    event(Event.FetchSpecialChestTime(it.toData()))
+                }
+            }.onFailure {
+                when (it) {
+                    is UnauthorizedException -> event(Event.ErrorMessage("토큰이 만료되었습니다. 다시 로그인해주세요."))
+                    else -> event(Event.ErrorMessage("알 수 없는 에러가 발생했습니다."))
+                }
+            }
+        }
+    }
+
+    private fun FetchSpecialChestTimeEntity.toData() =
+        FetchSpecialChestTimeEntity(
+            chestOpenDateTime = chestOpenDateTime,
+            isOpened = isOpened
+        )
+
     private fun FetchFreeChestTimeEntity.toData() =
         FetchFreeChestTimeEntity(
             chestOpenDateTime = chestOpenDateTime,
@@ -90,6 +113,7 @@ class HomeViewModel @Inject constructor(
     sealed class Event {
         data class FetchMyInfo(val fetchMyInfoEntity: FetchMyInfoEntity) : Event()
         data class FetchFreeChestTime(val fetchFreeChestTimeEntity: FetchFreeChestTimeEntity) : Event()
+        data class FetchSpecialChestTime(val fetchSpecialChestTimeEntity: FetchSpecialChestTimeEntity) : Event()
         data class ErrorMessage(val message: String) : Event()
     }
 }
