@@ -14,7 +14,9 @@ import com.yongjincompany.dsmtcg.base.BaseFragment
 import com.yongjincompany.dsmtcg.databinding.FragmentHomeBinding
 import com.yongjincompany.dsmtcg.extensions.loadCircleFromUrl
 import com.yongjincompany.dsmtcg.extensions.repeatOnStarted
+import com.yongjincompany.dsmtcg.ui.chest.ChestActivity
 import com.yongjincompany.dsmtcg.ui.home.profile.MyPageActivity
+import com.yongjincompany.dsmtcg.ui.home.setting.SettingActivity
 import com.yongjincompany.dsmtcg.viewmodel.home.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -53,13 +55,32 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(
         is HomeViewModel.Event.ErrorMessage -> {
             showShortToast(event.message)
         }
-
     }
 
     override fun initView() {
         binding.userCardview.setOnClickListener {
             val intent = Intent(context, MyPageActivity::class.java)
             startActivity(intent)
+        }
+        binding.menu.setOnClickListener {
+            val intent = Intent(context, SettingActivity::class.java)
+            startActivity(intent)
+        }
+        binding.freeCardpack.setOnClickListener {
+            if (binding.tvFreeChest.text == "오픈 가능") {
+                val intent = Intent(context, ChestActivity::class.java)
+                startActivity(intent)
+            } else {
+                showShortToast("아직 오픈 가능한 시간이 아닙니다")
+            }
+        }
+        binding.specialCardpack.setOnClickListener {
+            if (binding.tvSpecialChest.text == "오픈 가능") {
+                val intent = Intent(context, ChestActivity::class.java)
+                startActivity(intent)
+            } else {
+                showShortToast("아직 오픈 가능한 시간이 아닙니다")
+            }
         }
     }
 
@@ -69,6 +90,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(
         if (tvRank.text == "0") tvRank.text = profileData.rank.toString() else tvRank.text =
             "랭크 순위권 외"
         profileData.profileImageUrl.let { binding.ivProfileImage.loadCircleFromUrl(it) }
+        binding.tvBambooCount.text = profileData.coin.toString()
     }
 
     private fun setFreeChestTimeValue(freeChestTimeData: FetchFreeChestTimeEntity) {
@@ -78,6 +100,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(
 
     private fun setSpecialChestTimeValue(specialChestTimeData: FetchSpecialChestTimeEntity) {
         val tvSpecialChest = binding.tvSpecialChest
-        if (specialChestTimeData.isOpened) tvSpecialChest.text = "오픈 가능" else tvSpecialChest.text = "안열림ㅅㄱ"
+        if (specialChestTimeData.isOpened) tvSpecialChest.text = "오픈 가능" else tvSpecialChest.text =
+            "안열림ㅅㄱ"
     }
 }
