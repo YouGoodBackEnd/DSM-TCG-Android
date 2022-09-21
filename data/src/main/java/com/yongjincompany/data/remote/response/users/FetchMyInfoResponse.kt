@@ -7,6 +7,7 @@ data class FetchMyInfoResponse(
     @SerializedName("name") val name: String,
     @SerializedName("profile_image_url") val profileImageUrl: String,
     @SerializedName("rank") val rank: Int,
+    @SerializedName("coin") val coin: Int,
     @SerializedName("user_id") val userId: Long,
     @SerializedName("card_count") val cardCount: CardCount,
 ) {
@@ -33,6 +34,7 @@ fun FetchMyInfoResponse.toEntity() =
         name = name,
         profileImageUrl = profileImageUrl,
         rank = rank,
+        coin = coin,
         userId = userId,
         cardCount = cardCount.toEntity()
     )

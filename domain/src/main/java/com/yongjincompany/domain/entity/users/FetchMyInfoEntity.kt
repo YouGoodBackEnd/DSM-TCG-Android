@@ -4,6 +4,7 @@ data class FetchMyInfoEntity(
     val name: String,
     val profileImageUrl: String,
     val rank: Int?,
+    val coin: Int,
     val userId: Long,
     val cardCount: CardCount,
 ) {

@@ -92,6 +92,7 @@ class HomeViewModel @Inject constructor(
             profileImageUrl = profileImageUrl,
             rank = rank,
             userId = userId,
+            coin = coin,
             cardCount = cardCount.toData()
         )
 

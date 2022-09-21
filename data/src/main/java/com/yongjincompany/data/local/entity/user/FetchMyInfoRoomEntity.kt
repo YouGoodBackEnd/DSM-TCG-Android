@@ -13,6 +13,7 @@ data class FetchMyInfoRoomEntity(
     val name: String,
     val profileImageUrl: String,
     val rank: Int,
+    val coin: Int,
     @Embedded val cardCount: CardCount
 ) {
     data class CardCount(
@@ -46,6 +47,7 @@ fun FetchMyInfoRoomEntity.toEntity() =
         name = name,
         profileImageUrl = profileImageUrl,
         rank = rank,
+        coin = coin,
         userId = userId,
         cardCount = cardCount.toEntity()
     )
@@ -56,6 +58,7 @@ fun FetchMyInfoEntity.toDbEntity() =
             name = name,
             profileImageUrl = profileImageUrl,
             rank = rank!!,
+            coin = coin,
             userId = userId,
             cardCount = cardCount.toDbEntity()
         )
