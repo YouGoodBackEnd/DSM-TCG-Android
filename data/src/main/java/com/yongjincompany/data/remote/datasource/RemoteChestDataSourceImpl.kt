@@ -1,14 +1,12 @@
 package com.yongjincompany.data.remote.datasource
 
 import com.yongjincompany.data.remote.api.ChestApi
-import com.yongjincompany.data.remote.response.chests.FreeChestOpenResponse
-import com.yongjincompany.data.remote.response.chests.FreeChestOpenTimeResponse
-import com.yongjincompany.data.remote.response.chests.SpecialChestOpenTimeResponse
-import com.yongjincompany.data.remote.response.chests.toEntity
+import com.yongjincompany.data.remote.response.chests.*
 import com.yongjincompany.data.util.HttpHandler
 import com.yongjincompany.domain.entity.chests.FetchFreeChestTimeEntity
 import com.yongjincompany.domain.entity.chests.FetchSpecialChestTimeEntity
 import com.yongjincompany.domain.entity.chests.FreeChestOpenEntity
+import com.yongjincompany.domain.entity.chests.SpecialChestOpenEntity
 import javax.inject.Inject
 
 class RemoteChestDataSourceImpl @Inject constructor(
@@ -27,6 +25,11 @@ class RemoteChestDataSourceImpl @Inject constructor(
     override suspend fun openFreeChest(): FreeChestOpenEntity =
         HttpHandler<FreeChestOpenResponse>()
             .httpRequest { chestApi.openFreeChest() }
+            .sendRequest().toEntity()
+
+    override suspend fun openSpecialChest(): SpecialChestOpenEntity =
+        HttpHandler<SpecialChestOpenResponse>()
+            .httpRequest { chestApi.openSpecialChest() }
             .sendRequest().toEntity()
 
 }
