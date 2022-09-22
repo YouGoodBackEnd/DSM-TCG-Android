@@ -38,4 +38,9 @@ class RemoteChestDataSourceImpl @Inject constructor(
         HttpHandler<GoldChestOpenResponse>()
             .httpRequest { chestApi.openGoldChest() }
             .sendRequest().toEntity()
+
+    override suspend fun openLegendChest(): LegendChestOpenEntity =
+        HttpHandler<LegendChestOpenResponse>()
+            .httpRequest { chestApi.openLegendChest() }
+            .sendRequest().toEntity()
 }
