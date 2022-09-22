@@ -39,4 +39,9 @@ class ChestRepositoryImpl @Inject constructor(
         OfflineCacheUtil<GoldChestOpenEntity>()
             .remoteData { remoteChestDataSource.openGoldChest() }
             .createRemoteFlow()
+
+    override suspend fun openLegendChest(): Flow<LegendChestOpenEntity> =
+        OfflineCacheUtil<LegendChestOpenEntity>()
+            .remoteData { remoteChestDataSource.openLegendChest() }
+            .createRemoteFlow()
 }
