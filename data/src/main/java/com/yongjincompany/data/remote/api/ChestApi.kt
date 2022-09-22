@@ -19,4 +19,7 @@ interface ChestApi {
 
     @POST("chests/silver")
     suspend fun openSilverChest(): SilverChestOpenResponse
+
+    @POST("chests/gold")
+    suspend fun openGoldChest(): GoldChestOpenResponse
 }
