@@ -15,4 +15,6 @@ interface ChestRepository {
     suspend fun openSilverChest(): Flow<SilverChestOpenEntity>
 
     suspend fun openGoldChest(): Flow<GoldChestOpenEntity>
+
+    suspend fun openLegendChest(): Flow<LegendChestOpenEntity>
 }
