@@ -13,4 +13,6 @@ interface RemoteChestDataSource {
     suspend fun openSpecialChest(): SpecialChestOpenEntity
 
     suspend fun openSilverChest(): SilverChestOpenEntity
+
+    suspend fun openGoldChest(): GoldChestOpenEntity
 }
