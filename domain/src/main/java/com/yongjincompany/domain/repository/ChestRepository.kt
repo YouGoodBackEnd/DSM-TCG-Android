@@ -1,9 +1,6 @@
 package com.yongjincompany.domain.repository
 
-import com.yongjincompany.domain.entity.chests.FetchFreeChestTimeEntity
-import com.yongjincompany.domain.entity.chests.FetchSpecialChestTimeEntity
-import com.yongjincompany.domain.entity.chests.FreeChestOpenEntity
-import com.yongjincompany.domain.entity.chests.SpecialChestOpenEntity
+import com.yongjincompany.domain.entity.chests.*
 import kotlinx.coroutines.flow.Flow
 
 interface ChestRepository {
@@ -14,4 +11,6 @@ interface ChestRepository {
     suspend fun openFreeChest(): Flow<FreeChestOpenEntity>
 
     suspend fun openSpecialChest(): Flow<SpecialChestOpenEntity>
+
+    suspend fun openSilverChest(): Flow<SilverChestOpenEntity>
 }
