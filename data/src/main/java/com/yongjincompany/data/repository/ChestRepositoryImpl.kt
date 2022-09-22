@@ -2,10 +2,7 @@ package com.yongjincompany.data.repository
 
 import com.yongjincompany.data.remote.datasource.RemoteChestDataSource
 import com.yongjincompany.data.util.OfflineCacheUtil
-import com.yongjincompany.domain.entity.chests.FetchFreeChestTimeEntity
-import com.yongjincompany.domain.entity.chests.FetchSpecialChestTimeEntity
-import com.yongjincompany.domain.entity.chests.FreeChestOpenEntity
-import com.yongjincompany.domain.entity.chests.SpecialChestOpenEntity
+import com.yongjincompany.domain.entity.chests.*
 import com.yongjincompany.domain.repository.ChestRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
@@ -31,5 +28,15 @@ class ChestRepositoryImpl @Inject constructor(
     override suspend fun openSpecialChest(): Flow<SpecialChestOpenEntity> =
         OfflineCacheUtil<SpecialChestOpenEntity>()
             .remoteData { remoteChestDataSource.openSpecialChest() }
+            .createRemoteFlow()
+
+    override suspend fun openSilverChest(): Flow<SilverChestOpenEntity> =
+        OfflineCacheUtil<SilverChestOpenEntity>()
+            .remoteData { remoteChestDataSource.openSilverChest() }
+            .createRemoteFlow()
+
+    override suspend fun openGoldChest(): Flow<GoldChestOpenEntity> =
+        OfflineCacheUtil<GoldChestOpenEntity>()
+            .remoteData { remoteChestDataSource.openGoldChest() }
             .createRemoteFlow()
 }
