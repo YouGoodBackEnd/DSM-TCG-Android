@@ -190,6 +190,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/special_cardpack"
             android:layout_width="0dp"
             android:layout_height="68dp"
             android:layout_marginStart="4dp"
