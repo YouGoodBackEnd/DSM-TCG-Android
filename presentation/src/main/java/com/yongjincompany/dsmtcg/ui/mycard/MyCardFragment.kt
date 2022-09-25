@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.yongjincompany.domain.entity.cards.FetchMyCardEntity
 import com.yongjincompany.dsmtcg.base.BaseFragment
@@ -79,7 +80,7 @@ class MyCardFragment : BaseFragment<FragmentMyCardBinding>(
         rAdapter = MyCardAdapter(myCardData)
 
         binding.cardList.apply {
-            layoutManager = LinearLayoutManager(context)
+            layoutManager = GridLayoutManager(context, 3)
             setHasFixedSize(true)
             adapter = rAdapter
         }
