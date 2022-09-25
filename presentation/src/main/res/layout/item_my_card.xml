@@ -2,12 +2,19 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="160dp"
-        android:layout_height="240dp"
+        android:layout_width="105dp"
+        android:layout_height="140dp"
         android:layout_marginTop="16dp"
-        app:cardCornerRadius="12dp">
+        app:cardCornerRadius="12dp"
+        app:strokeWidth="2dp"
+        app:strokeColor="@color/next_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -15,9 +22,8 @@
 
             <ImageView
                 android:id="@+id/iv_card"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleY="1.2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:src="@drawable/img"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -28,21 +34,21 @@
                 android:id="@+id/card_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:fontFamily="@font/nanumsquare_aceb"
                 android:text="12"
-                android:textSize="18sp"
-                android:layout_marginTop="8dp"
                 android:textColor="@color/white"
+                android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/circleImageView4"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
                 android:src="@drawable/dsm_logo"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -54,7 +60,7 @@
                 android:fontFamily="@font/nanumsquare_aceb"
                 android:text="S"
                 android:textColor="#FF5722"
-                android:textSize="38sp"
+                android:textSize="25sp"
                 app:layout_constraintBottom_toTopOf="@+id/card_name"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -62,13 +68,13 @@
             <TextView
                 android:id="@+id/card_name"
                 android:layout_width="0dp"
-                android:layout_height="32dp"
+                android:layout_height="20dp"
                 android:background="@drawable/card_background"
                 android:fontFamily="@font/nanumsquare_aceb"
                 android:gravity="center"
                 android:text="초월거인 장석연"
                 android:textColor="@color/white"
-                android:textSize="15sp"
+                android:textSize="10sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -77,4 +83,5 @@
 
 
     </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
