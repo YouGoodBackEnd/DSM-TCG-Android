@@ -36,6 +36,22 @@
             android:exported="false" />
 
         <activity
+            android:name=".ui.home.setting.SettingActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.home.setting.InfoActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.chest.FreeChestActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.chest.SpecialChestActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".ui.splash.SplashActivity"
             android:exported="true"
             android:noHistory="true">
