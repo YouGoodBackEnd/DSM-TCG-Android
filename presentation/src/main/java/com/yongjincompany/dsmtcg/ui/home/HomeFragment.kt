@@ -14,7 +14,8 @@ import com.yongjincompany.dsmtcg.base.BaseFragment
 import com.yongjincompany.dsmtcg.databinding.FragmentHomeBinding
 import com.yongjincompany.dsmtcg.extensions.loadCircleFromUrl
 import com.yongjincompany.dsmtcg.extensions.repeatOnStarted
-import com.yongjincompany.dsmtcg.ui.chest.ChestActivity
+import com.yongjincompany.dsmtcg.ui.chest.FreeChestActivity
+import com.yongjincompany.dsmtcg.ui.chest.SpecialChestActivity
 import com.yongjincompany.dsmtcg.ui.home.profile.MyPageActivity
 import com.yongjincompany.dsmtcg.ui.home.setting.SettingActivity
 import com.yongjincompany.dsmtcg.viewmodel.home.HomeViewModel
@@ -68,7 +69,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(
         }
         binding.freeCardpack.setOnClickListener {
             if (binding.tvFreeChest.text == "오픈 가능") {
-                val intent = Intent(context, ChestActivity::class.java)
+                val intent = Intent(context, FreeChestActivity::class.java)
                 startActivity(intent)
             } else {
                 showShortToast("아직 오픈 가능한 시간이 아닙니다")
@@ -76,7 +77,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(
         }
         binding.specialCardpack.setOnClickListener {
             if (binding.tvSpecialChest.text == "오픈 가능") {
-                val intent = Intent(context, ChestActivity::class.java)
+                val intent = Intent(context, SpecialChestActivity::class.java)
                 startActivity(intent)
             } else {
                 showShortToast("아직 오픈 가능한 시간이 아닙니다")
