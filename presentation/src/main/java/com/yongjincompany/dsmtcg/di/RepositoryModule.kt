@@ -2,9 +2,11 @@ package com.yongjincompany.dsmtcg.di
 
 import com.yongjincompany.data.repository.CardRepositoryImpl
 import com.yongjincompany.data.repository.ChestRepositoryImpl
+import com.yongjincompany.data.repository.RankRepositoryImpl
 import com.yongjincompany.data.repository.UserRepositoryImpl
 import com.yongjincompany.domain.repository.CardRepository
 import com.yongjincompany.domain.repository.ChestRepository
+import com.yongjincompany.domain.repository.RankRepository
 import com.yongjincompany.domain.repository.UserRepository
 import dagger.Binds
 import dagger.Module
@@ -36,4 +38,9 @@ abstract class RepositoryModule {
     abstract fun provideChestRepository(
         chestRepositoryImpl: ChestRepositoryImpl,
     ): ChestRepository
+
+    @Binds
+    abstract fun provideRankRepository(
+        rankRepositoryImpl: RankRepositoryImpl
+    ): RankRepository
 }
