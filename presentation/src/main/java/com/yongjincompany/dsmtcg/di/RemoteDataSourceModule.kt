@@ -36,4 +36,9 @@ abstract class RemoteDataSourceModule {
         remoteChestDataSourceImpl: RemoteChestDataSourceImpl
     ): RemoteChestDataSource
 
+    @Binds
+    abstract fun provideRemoteRankDataSource(
+        remoteRankDataSourceImpl: RemoteRankDataSourceImpl
+    ): RemoteRankDataSource
+
 }
