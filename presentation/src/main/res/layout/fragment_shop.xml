@@ -30,10 +30,10 @@
             android:layout_marginStart="-12dp"
             android:layout_marginEnd="12dp"
             android:background="@drawable/bamboo_background"
-            app:layout_constraintBottom_toBottomOf="@+id/bamboo_count"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_bamboo_count"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="@+id/bamboo_count" />
+            app:layout_constraintTop_toTopOf="@+id/tv_bamboo_count" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imageView"
@@ -43,12 +43,12 @@
             android:src="@drawable/bamboo"
             app:civ_border_color="@color/white"
             app:civ_border_width="0.7dp"
-            app:layout_constraintBottom_toBottomOf="@+id/bamboo_count"
-            app:layout_constraintEnd_toStartOf="@+id/bamboo_count"
-            app:layout_constraintTop_toTopOf="@+id/bamboo_count" />
+            app:layout_constraintBottom_toBottomOf="@+id/tv_bamboo_count"
+            app:layout_constraintEnd_toStartOf="@+id/tv_bamboo_count"
+            app:layout_constraintTop_toTopOf="@+id/tv_bamboo_count" />
 
         <TextView
-            android:id="@+id/bamboo_count"
+            android:id="@+id/tv_bamboo_count"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
