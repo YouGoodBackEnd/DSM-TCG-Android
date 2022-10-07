@@ -2,7 +2,6 @@ package com.yongjincompany.data.remote.response.chests
 
 import com.google.gson.annotations.SerializedName
 import com.yongjincompany.domain.entity.chests.SilverChestOpenEntity
-import com.yongjincompany.domain.entity.chests.SpecialChestOpenEntity
 
 data class SilverChestOpenResponse(
     @SerializedName("card_list") val cardList: List<Card>,
