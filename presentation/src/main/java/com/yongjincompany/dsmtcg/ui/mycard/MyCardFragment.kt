@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.yongjincompany.domain.entity.cards.FetchMyCardEntity
+import com.yongjincompany.domain.entity.chests.FetchFreeChestTimeEntity
 import com.yongjincompany.dsmtcg.base.BaseFragment
 import com.yongjincompany.dsmtcg.R
 import com.yongjincompany.dsmtcg.databinding.FragmentMyCardBinding
@@ -45,6 +46,7 @@ class MyCardFragment : BaseFragment<FragmentMyCardBinding>(
     private fun handleEvent(event: MyCardViewModel.Event) = when (event) {
 
         is MyCardViewModel.Event.FetchMyCard -> {
+
             when {
                 event.fetchMyCardEntity.cardList.isEmpty() -> {
                     binding.tvNullList.visibility = View.VISIBLE
@@ -56,6 +58,7 @@ class MyCardFragment : BaseFragment<FragmentMyCardBinding>(
                 }
                 else -> {}
             }
+            setCollectionValue(event.fetchMyCardEntity)
         }
         is MyCardViewModel.Event.ErrorMessage -> {
             showShortToast(event.message)
@@ -63,6 +66,10 @@ class MyCardFragment : BaseFragment<FragmentMyCardBinding>(
     }
     override fun initView() {
         setAdapter()
+    }
+
+    private fun setCollectionValue(myCardData: FetchMyCardEntity) {
+        binding.tvCollection.text = "${myCardData.cardCount.toString()} / 27"
     }
 
     @SuppressLint("NotifyDataSetChanged")
