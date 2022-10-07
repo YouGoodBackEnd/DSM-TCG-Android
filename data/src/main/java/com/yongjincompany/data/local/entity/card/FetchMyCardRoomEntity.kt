@@ -9,12 +9,14 @@ import com.yongjincompany.domain.entity.cards.FetchMyCardEntity
 data class FetchMyCardRoomEntity(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     @Embedded val cardCount: CardCount,
+    val totalCount: Int,
     val cardList: List<Card>,
 ) {
     data class Card(
         val cardId: Int,
         val cardImageUrl: String,
         val count: Int,
+        val description: String,
         val grade: String,
         val name: String,
     )
@@ -33,7 +35,8 @@ data class FetchMyCardRoomEntity(
             cardImageUrl = cardImageUrl,
             count = count,
             grade = grade,
-            name = name
+            name = name,
+            description = description
         )
 
     fun CardCount.toEntity() =
@@ -52,6 +55,7 @@ fun FetchMyCardEntity.Card.toDbEntity() =
         cardImageUrl = cardImageUrl,
         count = count,
         grade = grade,
+        description = description,
         name = name
     )
 
@@ -67,11 +71,13 @@ fun FetchMyCardEntity.CardCount.toDbEntity() =
 fun FetchMyCardRoomEntity.toEntity() =
     FetchMyCardEntity(
         cardCount = cardCount.toEntity(),
+        totalCount = totalCount,
         cardList = cardList.map { it.toEntity() }
     )
 
 fun FetchMyCardEntity.toDbEntity() =
     FetchMyCardRoomEntity(
         cardCount = cardCount.toDbEntity(),
+        totalCount = totalCount,
         cardList = cardList.map { it.toDbEntity() }
     )

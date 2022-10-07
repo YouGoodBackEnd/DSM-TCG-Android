@@ -5,6 +5,7 @@ import com.yongjincompany.domain.entity.cards.FetchMyCardEntity
 
 data class FetchMyCardResponse(
     @SerializedName("card_count") val cardCount: CardCount,
+    @SerializedName("total_count") val totalCount: Int,
     @SerializedName("card_list") val cardList: List<Card>,
 ) {
     data class Card(
@@ -12,6 +13,7 @@ data class FetchMyCardResponse(
         @SerializedName("card_image_url") val cardImageUrl: String,
         @SerializedName("count") val count: Int,
         @SerializedName("grade") val grade: String,
+        @SerializedName("description") val description: String,
         @SerializedName("name") val name: String,
     )
 
@@ -28,6 +30,7 @@ data class FetchMyCardResponse(
             cardId = cardId,
             cardImageUrl = cardImageUrl,
             count = count,
+            description = description,
             grade = grade,
             name = name
         )
@@ -45,5 +48,6 @@ data class FetchMyCardResponse(
 fun FetchMyCardResponse.toEntity() =
     FetchMyCardEntity(
         cardCount = cardCount.toEntity(),
+        totalCount = totalCount,
         cardList = cardList.map { it.toEntity() }
     )
