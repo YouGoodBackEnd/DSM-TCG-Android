@@ -48,6 +48,7 @@ class MyCardViewModel @Inject constructor(
         FetchMyCardEntity.Card(
             cardId = cardId,
             cardImageUrl = cardImageUrl,
+            description = description,
             count = count,
             grade = grade,
             name = name
@@ -56,6 +57,7 @@ class MyCardViewModel @Inject constructor(
     private fun FetchMyCardEntity.toData() =
         FetchMyCardEntity(
             cardCount = cardCount.toData(),
+            totalCount = totalCount,
             cardList = cardList.map { it.toData() }
         )
 
