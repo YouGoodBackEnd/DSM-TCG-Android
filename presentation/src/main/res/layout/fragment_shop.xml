@@ -19,7 +19,7 @@
             android:layout_marginTop="16dp"
             android:fontFamily="@font/nanumsquare_aceb"
             android:text="상점"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="32sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -63,6 +63,19 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <View
+            android:id="@+id/view3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="-20dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/trade_background"
+            android:backgroundTint="#73AAAA"
+            app:layout_constraintBottom_toTopOf="@+id/textView6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
         <ImageView
             android:id="@+id/imageView4"
             android:layout_width="170dp"
@@ -76,8 +89,6 @@
             android:id="@+id/textView4"
             android:layout_width="0dp"
             android:layout_height="36dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
             android:background="@drawable/trade_background"
             android:backgroundTint="@color/next_color"
             android:fontFamily="@font/nanumsquare_aceb"
@@ -96,19 +107,20 @@
             android:layout_marginTop="8dp"
             android:fontFamily="@font/nanumsquare_aceb"
             android:text="구매한 카드팩은 바로 열립니다!"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/똥카드"
-            android:layout_width="100dp"
+            android:layout_width="112dp"
             android:layout_height="180dp"
             android:layout_marginTop="16dp"
             app:cardCornerRadius="8dp"
             app:layout_constraintEnd_toStartOf="@+id/장미카드"
             app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/view3"
             app:layout_constraintTop_toBottomOf="@+id/textView5">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -121,7 +133,7 @@
                     android:layout_height="140dp"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/trade_background"
-                    android:backgroundTint="#FF9800"
+                    android:backgroundTint="@color/teal_700"
                     android:src="@drawable/ddong_card"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -129,8 +141,8 @@
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/circleImageView3"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
                     android:src="@drawable/bamboo"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/iv_ddong"
@@ -153,7 +165,7 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/장미카드"
-            android:layout_width="100dp"
+            android:layout_width="112dp"
             android:layout_height="180dp"
             app:cardCornerRadius="8dp"
             app:layout_constraintEnd_toEndOf="@id/레전드카드"
@@ -170,7 +182,7 @@
                     android:layout_height="140dp"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/trade_background"
-                    android:backgroundTint="#FF9800"
+                    android:backgroundTint="@color/teal_700"
                     android:src="@drawable/rose_card"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -178,8 +190,8 @@
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/circleImageView2"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
                     android:src="@drawable/bamboo"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/iv_rose"
@@ -201,10 +213,10 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/레전드카드"
-            android:layout_width="100dp"
+            android:layout_width="112dp"
             android:layout_height="180dp"
             app:cardCornerRadius="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/view3"
             app:layout_constraintStart_toEndOf="@+id/장미카드"
             app:layout_constraintTop_toTopOf="@+id/똥카드">
 
@@ -218,7 +230,7 @@
                     android:layout_height="140dp"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/trade_background"
-                    android:backgroundTint="#FF9800"
+                    android:backgroundTint="@color/teal_700"
                     android:src="@drawable/leagend_card"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -226,8 +238,8 @@
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/circleImageView"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
                     android:src="@drawable/bamboo"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/iv_legend"
@@ -252,9 +264,7 @@
             android:id="@+id/textView6"
             android:layout_width="0dp"
             android:layout_height="36dp"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="60dp"
-            android:layout_marginEnd="16dp"
             android:background="@drawable/trade_background"
             android:backgroundTint="@color/next_color"
             android:fontFamily="@font/nanumsquare_aceb"
