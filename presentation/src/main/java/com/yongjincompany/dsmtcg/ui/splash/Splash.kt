@@ -62,7 +62,7 @@ fun Splash(
     ) {
         val image = rememberImagePainter(
             request = ImageRequest.Builder(context)
-                .data(R.drawable.logo)
+                .data(R.drawable.logo2)
                 .build()
         )
         Box(
@@ -74,10 +74,10 @@ fun Splash(
                 contentDescription = null
             )
             Column {
-                Spacer(Modifier.size(142.dp))
+                Spacer(Modifier.size(180.dp))
                 Title2(
                     text = "DSM-TCG",
-                    color = Color.White,
+                    color = Color.Black,
 
                 )
             }
