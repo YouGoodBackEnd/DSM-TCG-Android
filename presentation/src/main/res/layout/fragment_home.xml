@@ -24,7 +24,7 @@
             android:layout_marginTop="16dp"
             android:fontFamily="@font/nanumsquare_aceb"
             android:text="홈"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="32sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -71,8 +71,8 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/user_cardview"
             android:layout_width="0dp"
-            android:layout_height="64dp"
-            android:layout_marginStart="20dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             app:cardCornerRadius="4dp"
@@ -86,9 +86,9 @@
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/iv_profile_image"
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
-                    android:layout_marginStart="4dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="8dp"
                     android:src="@drawable/dsm_logo"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -98,7 +98,7 @@
                     android:id="@+id/tv_name"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="12dp"
                     android:layout_marginEnd="20dp"
                     android:fontFamily="@font/nanumsquare_aceb"
@@ -125,19 +125,18 @@
         <ImageView
             android:id="@+id/menu"
             android:layout_width="54dp"
-            android:layout_height="64dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/menu_background"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:src="@drawable/ic_menu"
+            android:layout_height="54dp"
+            android:layout_marginEnd="16dp"
+            android:padding="10dp"
+            android:src="@drawable/ic_setting"
+            app:layout_constraintBottom_toBottomOf="@+id/user_cardview"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/user_cardview" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/free_cardpack"
             android:layout_width="0dp"
-            android:layout_height="68dp"
+            android:layout_height="64dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="4dp"
             app:cardCornerRadius="4dp"
@@ -192,7 +191,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/special_cardpack"
             android:layout_width="0dp"
-            android:layout_height="68dp"
+            android:layout_height="64dp"
             android:layout_marginStart="4dp"
             android:layout_marginTop="8dp"
             app:cardCornerRadius="4dp"
@@ -241,22 +240,34 @@
 
         </androidx.cardview.widget.CardView>
 
+
         <ImageView
             android:id="@+id/imageView5"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginTop="8dp"
+            android:layout_margin="20dp"
             android:src="@drawable/arena"
             app:layout_constraintBottom_toTopOf="@+id/btn_trade"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/free_cardpack" />
 
+        <ImageView
+            android:id="@+id/iv_rank"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:padding="14dp"
+            android:background="@drawable/circle_btn"
+            android:src="@drawable/rank_cup"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/special_cardpack" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_trade"
-            android:layout_width="120dp"
-            android:layout_height="56dp"
+            android:layout_width="136dp"
+            android:layout_height="60dp"
             android:layout_marginBottom="36dp"
             android:background="@drawable/trade_background"
             android:backgroundTint="@color/next_color"
