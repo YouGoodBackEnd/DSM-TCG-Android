@@ -34,7 +34,7 @@ android {
         kotlinCompilerExtensionVersion = Version.jetpackCompose
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
     }
     buildFeatures {
         dataBinding = true

@@ -23,7 +23,7 @@ android {
         targetCompatibility = Project.javaVersion
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
     }
 }
 dependencies {
