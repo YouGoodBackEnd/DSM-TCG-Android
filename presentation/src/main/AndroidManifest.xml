@@ -52,6 +52,10 @@
             android:exported="false" />
 
         <activity
+            android:name=".ui.rank.RankActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".ui.splash.SplashActivity"
             android:exported="true"
             android:noHistory="true">
