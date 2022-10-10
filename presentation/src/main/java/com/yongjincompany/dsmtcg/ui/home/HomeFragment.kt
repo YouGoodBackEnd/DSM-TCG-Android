@@ -18,6 +18,7 @@ import com.yongjincompany.dsmtcg.ui.chest.FreeChestActivity
 import com.yongjincompany.dsmtcg.ui.chest.SpecialChestActivity
 import com.yongjincompany.dsmtcg.ui.home.profile.MyPageActivity
 import com.yongjincompany.dsmtcg.ui.home.setting.SettingActivity
+import com.yongjincompany.dsmtcg.ui.rank.RankActivity
 import com.yongjincompany.dsmtcg.viewmodel.home.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -82,6 +83,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(
             } else {
                 showShortToast("아직 오픈 가능한 시간이 아닙니다")
             }
+        }
+        binding.ivRank.setOnClickListener {
+            val intent = Intent(context, RankActivity::class.java)
+            startActivity(intent)
         }
     }
 
