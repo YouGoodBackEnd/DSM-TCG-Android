@@ -31,7 +31,6 @@ class MyCardAdapter(
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: FetchMyCardEntity.Card) {
-
             binding.cardName.text = item.name
             binding.cardCount.text = item.count.toString()
             binding.cardGrade.text = item.grade
@@ -40,8 +39,8 @@ class MyCardAdapter(
                 val intent = Intent(context, CardDetailActivity::class.java).apply {
                     putExtra("NAME", item.name)
                     putExtra("GRADE", item.grade)
+                    putExtra("DESCRIPTION", item.description)
                     putExtra("CARD_IMAGE", item.cardImageUrl)
-                    addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 }
                 context.startActivity(intent)
             }
