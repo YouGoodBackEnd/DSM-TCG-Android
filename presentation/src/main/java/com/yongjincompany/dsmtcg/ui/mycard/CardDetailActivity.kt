@@ -14,7 +14,6 @@ class CardDetailActivity : BaseActivity<ActivityCardDetailBinding>(
     private var grade: String = ""
     private var cardImage: String = ""
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -22,13 +21,14 @@ class CardDetailActivity : BaseActivity<ActivityCardDetailBinding>(
         name = intent.getStringExtra("NAME").toString()
         grade = intent.getStringExtra("GRADE").toString()
         cardImage = intent.getStringExtra("CARD_IMAGE").toString()
-    }
-
-    override fun initView() {
         binding.ivCard.loadFromUrl(cardImage)
         binding.cardExplain.text = description
         binding.cardName2.text = name
         binding.cardGrade2.text = grade
+
+    }
+
+    override fun initView() {
 
         binding.ivExit.setOnClickListener {
             finish()
