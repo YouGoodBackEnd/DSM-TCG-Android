@@ -41,6 +41,7 @@ class MyCardAdapter(
                     putExtra("GRADE", item.grade)
                     putExtra("DESCRIPTION", item.description)
                     putExtra("CARD_IMAGE", item.cardImageUrl)
+                    addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 }
                 context.startActivity(intent)
             }
