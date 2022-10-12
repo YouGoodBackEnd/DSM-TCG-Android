@@ -9,8 +9,8 @@ data class FetchMyCardResponse(
     @SerializedName("card_list") val cardList: List<Card>,
 ) {
     data class Card(
-        @SerializedName("card_id") val cardId: Int,
-        @SerializedName("card_image_url") val cardImageUrl: String,
+        @SerializedName("id") val cardId: Int,
+        @SerializedName("image_url") val cardImageUrl: String,
         @SerializedName("count") val count: Int,
         @SerializedName("grade") val grade: String,
         @SerializedName("description") val description: String,
