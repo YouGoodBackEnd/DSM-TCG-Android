@@ -69,7 +69,7 @@ class MyCardFragment : BaseFragment<FragmentMyCardBinding>(
     }
 
     private fun setCollectionValue(myCardData: FetchMyCardEntity) {
-        binding.tvCollection.text = "${myCardData.cardCount.toString()} / 27"
+        binding.tvCollection.text = "${myCardData.totalCount.toString()} / 27"
     }
 
     @SuppressLint("NotifyDataSetChanged")
