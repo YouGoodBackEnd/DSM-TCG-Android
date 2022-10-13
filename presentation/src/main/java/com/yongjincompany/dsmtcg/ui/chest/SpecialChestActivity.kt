@@ -1,6 +1,7 @@
 package com.yongjincompany.dsmtcg.ui.chest
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -11,6 +12,7 @@ import com.yongjincompany.dsmtcg.R
 import com.yongjincompany.dsmtcg.base.BaseActivity
 import com.yongjincompany.dsmtcg.databinding.ActivitySpecialChestBinding
 import com.yongjincompany.dsmtcg.extensions.repeatOnStarted
+import com.yongjincompany.dsmtcg.ui.MainActivity
 import com.yongjincompany.dsmtcg.ui.chest.adapter.SpecialChestCardAdapter
 import com.yongjincompany.dsmtcg.viewmodel.chest.SpecialChestViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -40,6 +42,7 @@ class SpecialChestActivity : BaseActivity<ActivitySpecialChestBinding>(
             setMyCardListData(event.specialChestOpenEntity)
             setOpenSpecialChest(event.specialChestOpenEntity)
         }
+
         is SpecialChestViewModel.Event.ErrorMessage -> {
             showShortToast(event.message)
         }
@@ -48,7 +51,18 @@ class SpecialChestActivity : BaseActivity<ActivitySpecialChestBinding>(
     override fun initView() {
         Glide.with(this).load(R.drawable.chest_back).centerCrop().into(binding.chestBackground)
         setAdapter()
+
+        binding.chestBackground.setOnClickListener {
+            val intent = Intent(applicationContext, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
+
+    override fun onBackPressed() {
+
+    }
+
 
     @SuppressLint("NotifyDataSetChanged")
     private fun setMyCardListData(list: SpecialChestOpenEntity) {

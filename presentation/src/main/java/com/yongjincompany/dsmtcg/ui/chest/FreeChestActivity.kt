@@ -1,6 +1,7 @@
 package com.yongjincompany.dsmtcg.ui.chest
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -11,7 +12,9 @@ import com.yongjincompany.dsmtcg.R
 import com.yongjincompany.dsmtcg.base.BaseActivity
 import com.yongjincompany.dsmtcg.databinding.ActivityFreeChestBinding
 import com.yongjincompany.dsmtcg.extensions.repeatOnStarted
+import com.yongjincompany.dsmtcg.ui.MainActivity
 import com.yongjincompany.dsmtcg.ui.chest.adapter.FreeChestCardAdapter
+import com.yongjincompany.dsmtcg.ui.home.HomeFragment
 import com.yongjincompany.dsmtcg.viewmodel.chest.FreeChestViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -40,6 +43,7 @@ class FreeChestActivity : BaseActivity<ActivityFreeChestBinding>(
             setMyCardListData(event.freeChestOpenEntity)
             setOpenFreeChest(event.freeChestOpenEntity)
         }
+
         is FreeChestViewModel.Event.ErrorMessage -> {
             showShortToast(event.message)
         }
@@ -48,6 +52,16 @@ class FreeChestActivity : BaseActivity<ActivityFreeChestBinding>(
     override fun initView() {
         Glide.with(this).load(R.drawable.chest_back).centerCrop().into(binding.chestBackground)
         setAdapter()
+
+        binding.chestBackground.setOnClickListener {
+            val intent = Intent(applicationContext, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+    }
+
+    override fun onBackPressed() {
+
     }
 
     @SuppressLint("NotifyDataSetChanged")
