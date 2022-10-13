@@ -13,24 +13,31 @@
             android:layout_height="match_parent" />
 
         <ImageView
-            android:id="@+id/iv_free_chest"
+            android:id="@+id/iv_special_chest"
             android:layout_width="300dp"
             android:layout_height="300dp"
+            android:layout_marginBottom="120dp"
             android:src="@drawable/special_chest"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="- 터치해서 다음으로 -"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_special_chest" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_card_list"
             android:layout_width="0dp"
             android:layout_height="120dp"
-            android:layout_marginStart="22dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginBottom="24dp"
-            app:layout_constraintBottom_toTopOf="@+id/iv_free_chest"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/iv_special_chest"
+            app:layout_constraintEnd_toEndOf="@+id/iv_special_chest"
+            app:layout_constraintStart_toStartOf="@+id/iv_special_chest"
             tools:listitem="@layout/item_chest" />
 
         <TextView
@@ -41,6 +48,7 @@
             android:layout_marginBottom="12dp"
             android:fontFamily="@font/nanumsquare_aceb"
             android:text="대나무 코인"
+            android:textColor="@color/main_color"
             android:textSize="15sp"
             app:layout_constraintBottom_toTopOf="@+id/rv_card_list"
             app:layout_constraintStart_toEndOf="@+id/tv_diamond" />
@@ -49,13 +57,13 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginBottom="12dp"
             android:fontFamily="@font/nanumsquare_aceb"
             android:text="다이아"
+            android:textColor="#03A9F4"
             android:textSize="15sp"
             app:layout_constraintBottom_toTopOf="@+id/rv_card_list"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="@+id/rv_card_list" />
 
         <TextView
             android:id="@+id/tv_diamond"
