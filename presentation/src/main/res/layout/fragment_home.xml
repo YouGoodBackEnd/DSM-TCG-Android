@@ -240,17 +240,118 @@
 
         </androidx.cardview.widget.CardView>
 
-
-        <ImageView
-            android:id="@+id/imageView5"
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView"
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="20dp"
-            android:src="@drawable/arena"
+            android:layout_height="240dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="44dp"
+            android:elevation="20dp"
+            app:cardCornerRadius="16dp"
             app:layout_constraintBottom_toTopOf="@+id/btn_trade"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/free_cardpack" />
+            app:layout_constraintTop_toBottomOf="@+id/free_cardpack">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/main_color">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/circleImageView5"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/dsm_logo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="0dp"
+                    android:src="@drawable/jinsung"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView17"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/nanumsquare_aceb"
+                    android:text="올 시즌을 강타 할\n이번 시즌 최고의 카드"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/nanumsquare_aceb"
+                    android:text="S"
+                    android:textColor="#FFC107"
+                    android:textSize="35sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/circleImageView5" />
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginBottom="2dp"
+                    android:fontFamily="@font/nanumsquare_aceb"
+                    android:text="grade"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView18"
+                    app:layout_constraintStart_toEndOf="@+id/textView18" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="36dp"
+                    android:layout_marginEnd="-16dp"
+                    android:fontFamily="@font/nanumsquare_aceb"
+                    android:rotation="-90"
+                    android:text="CRAZY\nMAN"
+                    android:textColor="#80FFFFFF"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <View
+            android:id="@+id/view6"
+            android:layout_width="24dp"
+            android:layout_height="160dp"
+            android:background="@drawable/next_card_back"
+            app:layout_constraintBottom_toBottomOf="@+id/materialCardView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/materialCardView" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="-8dp"
+            android:fontFamily="@font/nanumsquare_aceb"
+            android:rotation="-90"
+            android:text="내 카드"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/view6"
+            app:layout_constraintEnd_toEndOf="@+id/view6"
+            app:layout_constraintTop_toTopOf="@+id/view6" />
 
         <ImageView
             android:id="@+id/iv_rank"
@@ -258,8 +359,8 @@
             android:layout_height="54dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:padding="14dp"
             android:background="@drawable/circle_btn"
+            android:padding="14dp"
             android:src="@drawable/rank_cup"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/special_cardpack" />
@@ -267,7 +368,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_trade"
             android:layout_width="136dp"
-            android:layout_height="60dp"
+            android:layout_height="56dp"
             android:layout_marginBottom="36dp"
             android:background="@drawable/trade_background"
             android:backgroundTint="@color/next_color"
