@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.yongjincompany.domain.entity.chests.GoldChestOpenEntity
 import com.yongjincompany.domain.exception.ConflictException
 import com.yongjincompany.domain.exception.UnauthorizedException
+import com.yongjincompany.domain.param.chest.GoldChestOpenParam
 import com.yongjincompany.domain.usecase.chest.OpenGoldChestUseCase
 import com.yongjincompany.dsmtcg.util.MutableEventFlow
 import com.yongjincompany.dsmtcg.util.asEventFlow
@@ -20,15 +21,18 @@ class GoldChestViewModel @Inject constructor(
     private val _eventFlow = MutableEventFlow<Event>()
     val eventFlow = _eventFlow.asEventFlow()
 
+    private val parameter = GoldChestOpenParam(
+        price = 12000
+    )
+
     fun openGoldChestValue() {
         viewModelScope.launch {
             kotlin.runCatching {
-                openGoldChestUseCase.execute(Unit).collect {
+                openGoldChestUseCase.execute(parameter).collect {
                     event(Event.OpenGoldChest(it.toData()))
                 }
             }.onFailure {
                 when (it) {
-                    is ConflictException -> event(Event.ErrorMessage("상자 오픈 시간이 아닙니다"))
                     is UnauthorizedException -> event(Event.ErrorMessage("토큰이 만료되었습니다. 다시 로그인해주세요."))
                     else -> event(Event.ErrorMessage("알 수 없는 에러가 발생했습니다."))
                 }

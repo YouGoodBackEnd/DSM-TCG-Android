@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.yongjincompany.domain.entity.chests.LegendChestOpenEntity
 import com.yongjincompany.domain.exception.ConflictException
 import com.yongjincompany.domain.exception.UnauthorizedException
+import com.yongjincompany.domain.param.chest.LegendChestOpenParam
 import com.yongjincompany.domain.usecase.chest.OpenLegendChestUseCase
 import com.yongjincompany.dsmtcg.util.MutableEventFlow
 import com.yongjincompany.dsmtcg.util.asEventFlow
@@ -20,15 +21,18 @@ class LegendChestViewModel @Inject constructor(
     private val _eventFlow = MutableEventFlow<Event>()
     val eventFlow = _eventFlow.asEventFlow()
 
+    private val parameter = LegendChestOpenParam(
+        price = 50000
+    )
+
     fun openLegendChestValue() {
         viewModelScope.launch {
             kotlin.runCatching {
-                openLegendChestUseCase.execute(Unit).collect {
+                openLegendChestUseCase.execute(parameter).collect {
                     event(Event.OpenLegendChest(it.toData()))
                 }
             }.onFailure {
                 when (it) {
-                    is ConflictException -> event(Event.ErrorMessage("상자 오픈 시간이 아닙니다"))
                     is UnauthorizedException -> event(Event.ErrorMessage("토큰이 만료되었습니다. 다시 로그인해주세요."))
                     else -> event(Event.ErrorMessage("알 수 없는 에러가 발생했습니다."))
                 }
