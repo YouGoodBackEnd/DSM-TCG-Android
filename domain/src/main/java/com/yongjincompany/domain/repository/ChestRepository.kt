@@ -1,6 +1,9 @@
 package com.yongjincompany.domain.repository
 
 import com.yongjincompany.domain.entity.chests.*
+import com.yongjincompany.domain.param.chest.GoldChestOpenParam
+import com.yongjincompany.domain.param.chest.LegendChestOpenParam
+import com.yongjincompany.domain.param.chest.SilverChestOpenParam
 import kotlinx.coroutines.flow.Flow
 
 interface ChestRepository {
@@ -12,9 +15,9 @@ interface ChestRepository {
 
     suspend fun openSpecialChest(): Flow<SpecialChestOpenEntity>
 
-    suspend fun openSilverChest(): Flow<SilverChestOpenEntity>
+    suspend fun openSilverChest(silverChestOpenParam: SilverChestOpenParam): Flow<SilverChestOpenEntity>
 
-    suspend fun openGoldChest(): Flow<GoldChestOpenEntity>
+    suspend fun openGoldChest(goldChestOpenParam: GoldChestOpenParam): Flow<GoldChestOpenEntity>
 
-    suspend fun openLegendChest(): Flow<LegendChestOpenEntity>
+    suspend fun openLegendChest(legendChestOpenParam: LegendChestOpenParam): Flow<LegendChestOpenEntity>
 }

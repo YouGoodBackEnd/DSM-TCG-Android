@@ -1,8 +1,16 @@
 package com.yongjincompany.data.repository
 
 import com.yongjincompany.data.remote.datasource.RemoteChestDataSource
+import com.yongjincompany.data.remote.request.chest.GoldChestOpenRequest
+import com.yongjincompany.data.remote.request.chest.LegendChestOpenRequest
+import com.yongjincompany.data.remote.request.chest.SilverChestOpenRequest
+import com.yongjincompany.data.remote.request.users.ChangePasswordRequest
 import com.yongjincompany.data.util.OfflineCacheUtil
 import com.yongjincompany.domain.entity.chests.*
+import com.yongjincompany.domain.param.chest.GoldChestOpenParam
+import com.yongjincompany.domain.param.chest.LegendChestOpenParam
+import com.yongjincompany.domain.param.chest.SilverChestOpenParam
+import com.yongjincompany.domain.param.user.ChangePasswordParam
 import com.yongjincompany.domain.repository.ChestRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
@@ -30,18 +38,34 @@ class ChestRepositoryImpl @Inject constructor(
             .remoteData { remoteChestDataSource.openSpecialChest() }
             .createRemoteFlow()
 
-    override suspend fun openSilverChest(): Flow<SilverChestOpenEntity> =
+    override suspend fun openSilverChest(silverChestOpenParam: SilverChestOpenParam): Flow<SilverChestOpenEntity> =
         OfflineCacheUtil<SilverChestOpenEntity>()
-            .remoteData { remoteChestDataSource.openSilverChest() }
+            .remoteData { remoteChestDataSource.openSilverChest(silverChestOpenParam.toRequest()) }
             .createRemoteFlow()
 
-    override suspend fun openGoldChest(): Flow<GoldChestOpenEntity> =
+    override suspend fun openGoldChest(goldChestOpenParam: GoldChestOpenParam): Flow<GoldChestOpenEntity> =
         OfflineCacheUtil<GoldChestOpenEntity>()
-            .remoteData { remoteChestDataSource.openGoldChest() }
+            .remoteData { remoteChestDataSource.openGoldChest(goldChestOpenParam.toRequest()) }
             .createRemoteFlow()
 
-    override suspend fun openLegendChest(): Flow<LegendChestOpenEntity> =
+    override suspend fun openLegendChest(legendChestOpenParam: LegendChestOpenParam): Flow<LegendChestOpenEntity> =
         OfflineCacheUtil<LegendChestOpenEntity>()
-            .remoteData { remoteChestDataSource.openLegendChest() }
+            .remoteData { remoteChestDataSource.openLegendChest(legendChestOpenParam.toRequest()) }
             .createRemoteFlow()
+
+    fun SilverChestOpenParam.toRequest() =
+        SilverChestOpenRequest(
+            price = price
+        )
+
+    fun GoldChestOpenParam.toRequest() =
+        GoldChestOpenRequest(
+            price = price
+        )
+
+    fun LegendChestOpenParam.toRequest() =
+        LegendChestOpenRequest(
+            price = price
+        )
 }
+
