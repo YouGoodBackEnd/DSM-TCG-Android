@@ -11,4 +11,9 @@
     <color name="next_color">#009999</color>
     <color name="gray_800">#424242</color>
     <color name="gray_600">#757575</color>
+
+    <color name="colorTransparent">#00ffffff</color>
+    <color name="colorGradientStart">#D9FF43</color>
+    <color name="colorGradientCenter">#F67831</color>
+    <color name="colorGradientEnd">#FF1493</color>
 </resources>
