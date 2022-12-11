@@ -55,7 +55,7 @@ class MyPageActivity : BaseActivity<ActivityMyPageBinding>(
         binding.tvB.text = profileData.cardCount.bgradeCardCount.toString()
         binding.tvC.text = profileData.cardCount.cgradeCardCount.toString()
         binding.tvS.text = profileData.cardCount.sgradeCardCount.toString()
-        binding.tvSs.text = profileData.cardCount.ssgradeCardCount.toString()
+        binding.tvD.text = profileData.cardCount.dgradeCardCount.toString()
         binding.tvName.text = profileData.name
         val tvRank = binding.tvRank
         if (tvRank.text == "0") tvRank.text = profileData.rank.toString() else tvRank.text = "랭크 순위권 외"
