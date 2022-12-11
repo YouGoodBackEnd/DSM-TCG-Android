@@ -95,13 +95,15 @@
 
         <TextView
             android:id="@+id/card_name2"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
             android:fontFamily="@font/nanumsquare_aceb"
             android:text="이별한 영준짱"
             android:textColor="@color/black"
             android:textSize="21sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/textView8"
             app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
