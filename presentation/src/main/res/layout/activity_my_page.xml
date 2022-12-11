@@ -2,6 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -51,18 +52,18 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/imageView"
+                    android:id="@+id/s"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="110dp"
-                    android:text="SS"
+                    android:text="S"
                     android:textSize="16sp"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView3"
+                    app:layout_constraintEnd_toStartOf="@+id/a"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/tv_ss"
+                    android:id="@+id/tv_s"
                     android:layout_width="wrap_content"
                     android:layout_height="24dp"
                     android:layout_marginTop="4dp"
@@ -71,46 +72,19 @@
                     android:text="1"
                     android:textColor="@color/black"
                     android:textSize="16sp"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView"
-                    app:layout_constraintStart_toStartOf="@+id/imageView"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView" />
+                    app:layout_constraintEnd_toEndOf="@+id/s"
+                    app:layout_constraintStart_toStartOf="@+id/s"
+                    app:layout_constraintTop_toBottomOf="@+id/s" />
 
                 <TextView
-                    android:id="@+id/imageView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="110dp"
-                    android:text="S"
-                    android:textSize="16sp"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView4"
-                    app:layout_constraintStart_toEndOf="@+id/imageView"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/tv_s"
-                    android:layout_width="wrap_content"
-                    android:layout_height="24dp"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginBottom="30dp"
-                    android:fontFamily="@font/nanumsquare_aceb"
-                    android:gravity="center"
-                    android:text="7"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView3"
-                    app:layout_constraintStart_toStartOf="@+id/imageView3"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView3" />
-
-                <TextView
-                    android:id="@+id/imageView4"
+                    android:id="@+id/a"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="110dp"
                     android:text="A"
                     android:textSize="16sp"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView5"
-                    app:layout_constraintStart_toEndOf="@+id/imageView3"
+                    app:layout_constraintEnd_toStartOf="@+id/b"
+                    app:layout_constraintStart_toEndOf="@+id/s"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
@@ -121,23 +95,23 @@
                     android:layout_marginBottom="30dp"
                     android:fontFamily="@font/nanumsquare_aceb"
                     android:gravity="center"
-                    android:text="13"
+                    android:text="7"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView4"
-                    app:layout_constraintStart_toStartOf="@+id/imageView4"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+                    app:layout_constraintEnd_toEndOf="@+id/a"
+                    app:layout_constraintStart_toStartOf="@+id/a"
+                    app:layout_constraintTop_toBottomOf="@+id/a" />
 
                 <TextView
-                    android:id="@+id/imageView5"
+                    android:id="@+id/b"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="110dp"
                     android:text="B"
                     android:textSize="16sp"
-                    app:layout_constraintEnd_toStartOf="@+id/textView9"
-                    app:layout_constraintStart_toEndOf="@+id/imageView4"
+                    app:layout_constraintEnd_toStartOf="@+id/c"
+                    app:layout_constraintStart_toEndOf="@+id/a"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
@@ -148,23 +122,23 @@
                     android:layout_marginBottom="30dp"
                     android:fontFamily="@font/nanumsquare_aceb"
                     android:gravity="center"
-                    android:text="58"
+                    android:text="13"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView5"
-                    app:layout_constraintStart_toStartOf="@+id/imageView5"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+                    app:layout_constraintEnd_toEndOf="@+id/b"
+                    app:layout_constraintStart_toStartOf="@+id/b"
+                    app:layout_constraintTop_toBottomOf="@+id/b" />
 
                 <TextView
-                    android:id="@+id/textView9"
+                    android:id="@+id/c"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="110dp"
                     android:text="C"
                     android:textSize="16sp"
-                    app:layout_constraintStart_toEndOf="@id/imageView5"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/d"
+                    app:layout_constraintStart_toEndOf="@+id/b"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
@@ -175,17 +149,41 @@
                     android:layout_marginBottom="30dp"
                     android:fontFamily="@font/nanumsquare_aceb"
                     android:gravity="center"
+                    android:text="58"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/c"
+                    app:layout_constraintStart_toStartOf="@+id/c"
+                    app:layout_constraintTop_toBottomOf="@+id/c" />
+
+                <TextView
+                    android:id="@+id/d"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="110dp"
+                    android:text="D"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/c"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_d"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="30dp"
+                    android:fontFamily="@font/nanumsquare_aceb"
+                    android:gravity="center"
                     android:text="122"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/textView9"
-                    app:layout_constraintStart_toStartOf="@+id/textView9"
-                    app:layout_constraintTop_toBottomOf="@+id/textView9" />
-
+                    app:layout_constraintEnd_toEndOf="@+id/d"
+                    app:layout_constraintStart_toStartOf="@+id/d"
+                    app:layout_constraintTop_toBottomOf="@+id/d" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-
-
         </androidx.cardview.widget.CardView>
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -221,10 +219,10 @@
                     android:id="@+id/iv_rank"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/dsm_logo"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="12dp"
                     android:layout_marginBottom="12dp"
+                    android:src="@drawable/dsm_logo"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -253,12 +251,7 @@
                     android:textSize="12sp"
                     app:layout_constraintStart_toStartOf="@+id/tv_rank_grade"
                     app:layout_constraintTop_toBottomOf="@+id/tv_rank_grade" />
-
             </androidx.constraintlayout.widget.ConstraintLayout>
-
-
         </androidx.cardview.widget.CardView>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </layout>
