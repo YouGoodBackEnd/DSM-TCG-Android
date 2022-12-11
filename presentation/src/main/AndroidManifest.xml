@@ -56,6 +56,18 @@
             android:exported="false" />
 
         <activity
+            android:name=".ui.shop.cardpack.SilverChestActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.shop.cardpack.GoldChestActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.shop.cardpack.LegendChestActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".ui.splash.SplashActivity"
             android:exported="true"
             android:noHistory="true">
