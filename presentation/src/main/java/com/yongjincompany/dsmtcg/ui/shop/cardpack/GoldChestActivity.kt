@@ -2,6 +2,7 @@ package com.yongjincompany.dsmtcg.ui.shop.cardpack
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -49,10 +50,14 @@ class GoldChestActivity : BaseActivity<ActivityGoldChestBinding>(
     }
 
     override fun initView() {
-        Glide.with(this).load(R.drawable.chest_back).centerCrop().into(binding.chestBackground)
+        val animationDrawable: AnimationDrawable = binding.clGoldChest.background as AnimationDrawable
+        animationDrawable.setEnterFadeDuration(2500)
+        animationDrawable.setExitFadeDuration(5000)
+        animationDrawable.start()
+
         setAdapter()
 
-        binding.chestBackground.setOnClickListener {
+        binding.clGoldChest.setOnClickListener {
             val intent = Intent(applicationContext, MainActivity::class.java)
             startActivity(intent)
             finish()

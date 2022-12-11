@@ -2,6 +2,7 @@ package com.yongjincompany.dsmtcg.ui.chest
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -27,7 +28,6 @@ class FreeChestActivity : BaseActivity<ActivityFreeChestBinding>(
     private val myCardData = arrayListOf<FreeChestOpenEntity.Card>()
     private lateinit var rAdapter: FreeChestCardAdapter
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -50,10 +50,14 @@ class FreeChestActivity : BaseActivity<ActivityFreeChestBinding>(
     }
 
     override fun initView() {
-        Glide.with(this).load(R.drawable.chest_back).centerCrop().into(binding.chestBackground)
+        val animationDrawable: AnimationDrawable = binding.clFreeChest.background as AnimationDrawable
+        animationDrawable.setEnterFadeDuration(2500)
+        animationDrawable.setExitFadeDuration(5000)
+        animationDrawable.start()
+
         setAdapter()
 
-        binding.chestBackground.setOnClickListener {
+        binding.clFreeChest.setOnClickListener {
             val intent = Intent(applicationContext, MainActivity::class.java)
             startActivity(intent)
             finish()
