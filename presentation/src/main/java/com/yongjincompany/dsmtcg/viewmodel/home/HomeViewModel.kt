@@ -102,7 +102,7 @@ class HomeViewModel @Inject constructor(
             bgradeCardCount = bgradeCardCount,
             cgradeCardCount = cgradeCardCount,
             sgradeCardCount = sgradeCardCount,
-            ssgradeCardCount = ssgradeCardCount
+            dgradeCardCount = dgradeCardCount
         )
 
     private fun event(event: Event) {

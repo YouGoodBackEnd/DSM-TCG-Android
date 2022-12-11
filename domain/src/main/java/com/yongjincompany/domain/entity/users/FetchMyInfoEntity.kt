@@ -13,6 +13,6 @@ data class FetchMyInfoEntity(
         val bgradeCardCount: Int,
         val cgradeCardCount: Int,
         val sgradeCardCount: Int,
-        val ssgradeCardCount: Int,
+        val dgradeCardCount: Int,
     )
 }

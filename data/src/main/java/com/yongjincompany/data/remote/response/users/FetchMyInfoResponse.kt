@@ -16,7 +16,7 @@ data class FetchMyInfoResponse(
         @SerializedName("bgrade_card_count") val bgradeCardCount: Int,
         @SerializedName("cgrade_card_count") val cgradeCardCount: Int,
         @SerializedName("sgrade_card_count") val sgradeCardCount: Int,
-        @SerializedName("ssgrade_card_count") val ssgradeCardCount: Int,
+        @SerializedName("dgrade_card_count") val dgradeCardCount: Int,
     )
 
     fun CardCount.toEntity() =
@@ -25,7 +25,7 @@ data class FetchMyInfoResponse(
             bgradeCardCount = bgradeCardCount,
             cgradeCardCount = cgradeCardCount,
             sgradeCardCount = sgradeCardCount,
-            ssgradeCardCount = ssgradeCardCount
+            dgradeCardCount = dgradeCardCount
         )
 }
 

@@ -21,7 +21,7 @@ data class FetchMyInfoRoomEntity(
         val bgradeCardCount: Int,
         val cgradeCardCount: Int,
         val sgradeCardCount: Int,
-        val ssgradeCardCount: Int,
+        val dgradeCardCount: Int,
     )
 
     fun CardCount.toEntity() =
@@ -30,7 +30,7 @@ data class FetchMyInfoRoomEntity(
             bgradeCardCount = bgradeCardCount,
             cgradeCardCount = cgradeCardCount,
             sgradeCardCount = sgradeCardCount,
-            ssgradeCardCount = ssgradeCardCount
+            dgradeCardCount = dgradeCardCount
         )
 }
 fun FetchMyInfoEntity.CardCount.toDbEntity() =
@@ -39,7 +39,7 @@ fun FetchMyInfoEntity.CardCount.toDbEntity() =
         bgradeCardCount = bgradeCardCount,
         cgradeCardCount = cgradeCardCount,
         sgradeCardCount = sgradeCardCount,
-        ssgradeCardCount = ssgradeCardCount
+        dgradeCardCount = dgradeCardCount
     )
 
 fun FetchMyInfoRoomEntity.toEntity() =
