@@ -14,6 +14,7 @@ import com.yongjincompany.dsmtcg.base.BaseFragment
 import com.yongjincompany.dsmtcg.databinding.FragmentHomeBinding
 import com.yongjincompany.dsmtcg.extensions.loadCircleFromUrl
 import com.yongjincompany.dsmtcg.extensions.repeatOnStarted
+import com.yongjincompany.dsmtcg.ui.TradeFragment
 import com.yongjincompany.dsmtcg.ui.chest.FreeChestActivity
 import com.yongjincompany.dsmtcg.ui.chest.SpecialChestActivity
 import com.yongjincompany.dsmtcg.ui.home.profile.MyPageActivity
@@ -48,12 +49,15 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(
         is HomeViewModel.Event.FetchMyInfo -> {
             setProfileValue(event.fetchMyInfoEntity)
         }
+
         is HomeViewModel.Event.FetchFreeChestTime -> {
             setFreeChestTimeValue(event.fetchFreeChestTimeEntity)
         }
+
         is HomeViewModel.Event.FetchSpecialChestTime -> {
             setSpecialChestTimeValue(event.fetchSpecialChestTimeEntity)
         }
+
         is HomeViewModel.Event.ErrorMessage -> {
             showShortToast(event.message)
         }
@@ -88,6 +92,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(
             val intent = Intent(context, RankActivity::class.java)
             startActivity(intent)
         }
+        binding.btnTrade.setOnClickListener {
+            showShortToast("정식버젼을 기다려주세요!")
+        }
     }
 
     private fun setProfileValue(profileData: FetchMyInfoEntity) {
@@ -101,12 +108,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(
 
     private fun setFreeChestTimeValue(freeChestTimeData: FetchFreeChestTimeEntity) {
         val tvFreeChest = binding.tvFreeChest
-        if (freeChestTimeData.isOpened) tvFreeChest.text = "오픈 가능" else tvFreeChest.text = "안열림ㅅㄱ"
+        if (freeChestTimeData.isOpened) tvFreeChest.text = "오픈 가능" else tvFreeChest.text = "기다려유"
     }
 
     private fun setSpecialChestTimeValue(specialChestTimeData: FetchSpecialChestTimeEntity) {
         val tvSpecialChest = binding.tvSpecialChest
         if (specialChestTimeData.isOpened) tvSpecialChest.text = "오픈 가능" else tvSpecialChest.text =
-            "안열림ㅅㄱ"
+            "기다려유"
     }
 }
