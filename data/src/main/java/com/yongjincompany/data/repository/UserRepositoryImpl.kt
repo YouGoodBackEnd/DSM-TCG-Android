@@ -108,7 +108,10 @@ class UserRepositoryImpl @Inject constructor(
     }
 
     override suspend fun logOut() {
-        remoteUserDateSource.logOut()
+        localUserDataSource.clearId()
+        localUserDataSource.clearPw()
+        localUserDataSource.clearAccessToken()
+        localUserDataSource.clearRefreshToken()
     }
 
     override suspend fun deleteAccount() {
