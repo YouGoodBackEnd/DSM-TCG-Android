@@ -34,8 +34,8 @@ interface UserApi {
         @Body changePasswordRequest: ChangePasswordRequest
     )
 
-    @DELETE("users")
-    suspend fun logOut()
+    /*@DELETE("users")
+    suspend fun logOut()*/
 
     @DELETE("users")
     suspend fun deleteAccount()

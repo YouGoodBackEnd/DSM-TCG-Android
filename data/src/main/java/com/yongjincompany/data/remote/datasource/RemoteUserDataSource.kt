@@ -29,7 +29,7 @@ interface RemoteUserDataSource {
         changePasswordRequest: ChangePasswordRequest
     )
 
-    suspend fun logOut()
+    //suspend fun logOut()
 
     suspend fun deleteAccount()
 }
