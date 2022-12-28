@@ -5,6 +5,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="64dp"
+        android:layout_marginTop="4dp"
         android:background="@color/white">
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -49,10 +50,10 @@
 
         <ImageView
             android:id="@+id/ivRate"
-            android:visibility="gone"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginEnd="8dp"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/tvRate"
             app:layout_constraintTop_toTopOf="parent" />
