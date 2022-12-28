@@ -17,8 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 @Module
 @InstallIn(SingletonComponent::class)
 object NetWorkModule {
-    private const val BASE_URL = "http://52.5.10.3:8080"
-    private const val SOCKET_BASE_URL = "http://"
+    private const val BASE_URL = "http://52.3.67.38:8080"
 
     @Provides
     fun provideHttpLoggingInterceptor() = HttpLoggingInterceptor()
